@@ -1,0 +1,56 @@
+body {
+  background: #fff;
+}
+
+.App {
+  text-align: center;
+}
+
+.info {
+  margin: 0 auto;
+  width: 400px;
+}
+
+.info__city {
+  color: #000;
+  font-size: 24px;
+}
+
+.info__data {
+  text-align: left;
+  width: 200px;
+}
+
+.info__header {
+  padding:0;
+}
+
+.info__img {}
+
+.info__top {
+  display: flex;
+}
+
+.info__row {
+  color: #383838;
+  display: flex;
+  font-size: 13px;
+  line-height: 24px;
+  width: 100%;
+}
+
+.info__title {
+  text-align: left;
+  width: 200px;
+}
+
+.searchpanel {
+  margin: 0 auto;
+  width: 400px;
+}
+
+#searchpanel__delete {
+  cursor:pointer;
+  display:none;
+  margin-left:-20px;
+}
