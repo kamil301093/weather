@@ -9,10 +9,16 @@ const Info = (props: { city: string, icon: string, header: string, lastupdate: s
                         <h2 className="info__city">{props.city}</h2>
                         <div className="info__top">
                                 <Minipanel>
+                                        <div>
                                         <img className="info__img" src={props.icon} alt="weather icon" />
-                                        <h3 className="info__header">{props.header}</h3>
+                                        </div>
+                                        <div>
+                                                <h3 className="info__header">{props.tempC + " C (" + props.tempF + " F)"}</h3>
+                                                {props.header}
+                                        </div>
                                 </Minipanel>
                         </div>
+                        <h3 className="info__subtitle">Features</h3>
                         <div className="info__row">
                                 <div className="info__title">last update</div>
                                 <div className="info__data">{props.lastupdate}</div>
@@ -20,10 +26,6 @@ const Info = (props: { city: string, icon: string, header: string, lastupdate: s
                         <div className="info__row">
                                 <div className="info__title">day or night?</div>
                                 <div className="info__data">{dayOrNight > 0 ? 'day' : 'night'}</div>
-                        </div>
-                        <div className="info__row">
-                                <div className="info__title">temp</div>
-                                <div className="info__data">{props.tempC + " C (" + props.tempF + " F)"}</div>
                         </div>
                         <div className="info__row">
                                 <div className="info__title">feelslike temp</div>

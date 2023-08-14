@@ -9,7 +9,7 @@ function App() {
 
     <Content>
 
-      <Header>WeatherApp</Header>
+      <Header></Header>
 
       <Main></Main>
 
