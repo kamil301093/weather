@@ -9,28 +9,29 @@ const Info = (props: { city: string, icon: string, header: string, lastupdate: s
         return (
                 <div className="info">
                         <h2 className="info__city">{props.city}</h2>
-                        <div className="info__top">
+                        <div className="info__row">
                                 <div className="info__panel info__panel--big">
                                         <div>
                                                 <img className="info__img" src={props.icon} alt="weather icon" />
+                                                {props.header}
                                         </div>
                                         <div>
                                                 <h3 className="info__header">{props.tempC + " C (" + props.tempF + " F)"}</h3>
-                                                {props.header}
                                         </div>
                                 </div>
                         </div>
                         <div className="info__row">
                                 <div className="info__panel info__panel--half">
-                                        <FontAwesomeIcon icon={faClock} size="2xl" />
+                                        <FontAwesomeIcon icon={faEarthAfrica} size="2xl" />
                                         <div>
-                                                localtime
+                                                location.region location.country
                                         </div>
                                 </div>
                                 <div className="info__panel info__panel--half">
-                                        <FontAwesomeIcon icon={faEarthAfrica} size="2xl" />
+                                        <FontAwesomeIcon icon={faClock} size="2xl" />
                                         <div>
-                                                region
+                                                location.localtime
+                                                timezone location.timezone
                                         </div>
                                 </div>
                         </div>

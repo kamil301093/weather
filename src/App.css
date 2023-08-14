@@ -6,6 +6,11 @@ body {
   text-align: center;
 }
 
+.footer {
+  display:flex;
+  justify-content: space-between;
+}
+
 .header {
   background:#05B4F2;
   color:#fff;
@@ -64,16 +69,12 @@ body {
 }
 
 .info__panel--half {
-  padding:0 30px 0 30px;
-  width:45%;
+  padding:0 20px 0 20px;
+  width:35%;
 }
 
 .info__subtitle {
   text-align:left;
-}
-
-.info__top {
-  display: flex;
 }
 
 .info__row {
