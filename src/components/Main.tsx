@@ -112,10 +112,10 @@ const Main = () => {
         }, [currentWeather]);
 
         function locMe() {
-                navigator.geolocation.getCurrentPosition(function(position) {
-                        console.log("Latitude is :", position.coords.latitude);
-                        console.log("Longitude is :", position.coords.longitude);
-                      });
+                navigator.geolocation.getCurrentPosition(function (position) {
+                        const ltPlusLn = '' + position.coords.latitude + ',' + position.coords.longitude + '';
+                        setCoordinates(ltPlusLn);
+                });
         }
 
         return (
