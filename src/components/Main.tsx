@@ -46,7 +46,7 @@ const Main = () => {
                                         return response.json()
                                 })
                                 .then(data => {
-                                        setCities(data);
+                                        setCities(data);console.log(data);
                                 })
                 } else {
                         setCitiesResults("");
@@ -74,7 +74,7 @@ const Main = () => {
                                         return response.json()
                                 })
                                 .then(data => {
-                                        setCurrentWeather(data.current);console.log(data);
+                                        setCurrentWeather(data);console.log(data);
                                 });
                 }
         }, [coordinates]);
@@ -83,7 +83,11 @@ const Main = () => {
                 console.log(currentWeather)
                 if (currentWeather === "" || currentWeather === "undefined" || currentWeather.length === 0) {
                 } else {
-                        setCurrentWeatherDiv(<Info city={activeCity} icon={currentWeather.condition.icon} header={currentWeather.condition.text} lastupdate={currentWeather.last_updated} timeOfDay={currentWeather.is_day} tempC={currentWeather.temp_c} tempF={currentWeather.temp_f} feelslikeC={currentWeather.feelslike_c} feelslikeF={currentWeather.feelslike_f} cloud={currentWeather.cloud} uv={currentWeather.uv} windDir={currentWeather.wind_dir} windMph={currentWeather.wind_mph} windKph={currentWeather.wind_kph} humidity={currentWeather.humidity} pressureM={currentWeather.pressure_mb} pressureI={currentWeather.pressure_in} />);
+                        setCurrentWeatherDiv(
+                        <Info 
+                        city={activeCity} 
+                        icon={currentWeather.current.condition.icon} header={currentWeather.current.condition.text} region={currentWeather.location.region} country={currentWeather.location.country} localtime={currentWeather.location.localtime} timezone={currentWeather.location.tz_id} lastupdate={currentWeather.current.last_updated} timeOfDay={currentWeather.current.is_day} tempC={currentWeather.current.temp_c} tempF={currentWeather.current.temp_f} feelslikeC={currentWeather.current.feelslike_c} feelslikeF={currentWeather.feelslike_f} cloud={currentWeather.current.cloud} uv={currentWeather.current.uv} windDir={currentWeather.current.wind_dir} windMph={currentWeather.current.wind_mph} windKph={currentWeather.current.wind_kph} humidity={currentWeather.current.humidity} pressureM={currentWeather.current.pressure_mb} pressureI={currentWeather.current.pressure_in} 
+                        />);
                 }
         }, [currentWeather]);
 

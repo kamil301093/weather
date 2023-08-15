@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons/faClock';
 import { faEarthAfrica } from '@fortawesome/free-solid-svg-icons/faEarthAfrica';
 
-const Info = (props: { city: string, icon: string, header: string, lastupdate: string, timeOfDay: number, tempC: number, tempF: number, feelslikeC: number, feelslikeF: number, cloud: number, uv: number, windDir: number, windMph: number, windKph: number, humidity: number, pressureM: number, pressureI: number }) => {
+const Info = (props: { city: string, icon: string, header: string, region:string, country:string, localtime:string, timezone:string, lastupdate: string, timeOfDay: number, tempC: number, tempF: number, feelslikeC: number, feelslikeF: number, cloud: number, uv: number, windDir: number, windMph: number, windKph: number, humidity: number, pressureM: number, pressureI: number }) => {
 
         const dayOrNight = props.timeOfDay;
 
@@ -24,14 +24,14 @@ const Info = (props: { city: string, icon: string, header: string, lastupdate: s
                                 <div className="info__panel info__panel--half">
                                         <FontAwesomeIcon icon={faEarthAfrica} size="2xl" />
                                         <div>
-                                                location.region location.country
+                                                {props.region} {props.country}
                                         </div>
                                 </div>
                                 <div className="info__panel info__panel--half">
                                         <FontAwesomeIcon icon={faClock} size="2xl" />
                                         <div>
-                                                location.localtime
-                                                timezone location.timezone
+                                                localtime {props.localtime}
+                                                timzeone {props.timezone}
                                         </div>
                                 </div>
                         </div>
