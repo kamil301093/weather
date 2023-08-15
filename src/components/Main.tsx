@@ -17,7 +17,7 @@ const Main = () => {
         const [citiesResults, setCitiesResults] = useState<any>([]);
         const [keyword, setKeyword] = useState<string>("");
         const [showDeleteKeywordButton, setShowDeleteKeywordButton] = useState<boolean>(false);
-        const [coordinates, setCoordinates] = useState<string>("");
+        const [coordinates, setCoordinates] = useState<any>("");
         const [activeCity, setActiveCity] = useState<string>("");
         const [currentWeather, setCurrentWeather] = useState<any>([]);
         const [currentWeatherDiv, setCurrentWeatherDiv] = useState<any>();
@@ -127,7 +127,7 @@ const Main = () => {
                         <Geolocation locFunction={locMe} />
                         <div id="searchpanel__results">{citiesResults}</div>
                         <div className="searchpanel__weatherdata">{currentWeatherDiv}</div>
-                        <Map cords={coordinates}/>
+                        <Map mapCoords={coordinates}/>
                 </div>
         );
 
