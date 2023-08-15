@@ -96,6 +96,12 @@ body {
   width: 200px;
 }
 
+.leaflet-container {  
+  height: 100vh;  
+  width: 100%;  
+  z-index: 1;
+}
+
 .searchpanel {
   margin: 0 auto;
   width: 400px;

@@ -5,6 +5,7 @@ import Info from './Info';
 import Loading from './Loading';
 import NoResults from './NoResults';
 import Geolocation from './Geolocation';
+import Map from './Map';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCity } from '@fortawesome/free-solid-svg-icons/faCity';
@@ -126,6 +127,7 @@ const Main = () => {
                         <Geolocation locFunction={locMe} />
                         <div id="searchpanel__results">{citiesResults}</div>
                         <div className="searchpanel__weatherdata">{currentWeatherDiv}</div>
+                        <Map cords={coordinates}/>
                 </div>
         );
 
