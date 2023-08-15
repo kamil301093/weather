@@ -4,6 +4,7 @@ import Result from './Result';
 import Info from './Info';
 import Loading from './Loading';
 import NoResults from './NoResults';
+import Geolocation from './Geolocation';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCity } from '@fortawesome/free-solid-svg-icons/faCity';
@@ -110,11 +111,19 @@ const Main = () => {
                 }
         }, [currentWeather]);
 
+        function locMe() {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                        console.log("Latitude is :", position.coords.latitude);
+                        console.log("Longitude is :", position.coords.longitude);
+                      });
+        }
+
         return (
                 <div className="searchpanel">
                         <FontAwesomeIcon icon={faCity} />
                         <Search placeholder="Insert city name here" value={keyword} onChange={handleChange} />
                         <FontAwesomeIcon id="searchpanel__delete" icon={faX} onClick={removeKeyword} style={{ display: showDeleteKeywordButton == true ? 'inline-block' : 'none' }} />
+                        <Geolocation locFunction={locMe} />
                         <div id="searchpanel__results">{citiesResults}</div>
                         <div className="searchpanel__weatherdata">{currentWeatherDiv}</div>
                 </div>
