@@ -9,7 +9,7 @@ const Map = (props: { mapCoords: any }) => {
         <div className="map">
             {
                 coordsSplit.length > 0 &&
-                <MapContainer center={[coordsSplit[0], coordsSplit[1]]} zoom={13}>
+                <MapContainer center={[coordsSplit[0], coordsSplit[1]]} zoom={10}>
                     <TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                     <Marker position={[coordsSplit[0], coordsSplit[1]]}>

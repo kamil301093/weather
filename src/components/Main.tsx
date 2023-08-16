@@ -21,6 +21,7 @@ const Main = () => {
         const [activeCity, setActiveCity] = useState<string>("");
         const [currentWeather, setCurrentWeather] = useState<any>([]);
         const [currentWeatherDiv, setCurrentWeatherDiv] = useState<any>();
+        const [mapDiv, setMapDiv] = useState<any>();
 
         const handleChange = (e: any) => {
                 let value = e.target.value;
@@ -78,6 +79,7 @@ const Main = () => {
                                 .then(data => {
                                         setCurrentWeather(data);
                                 });
+                        setMapDiv(<Map mapCoords={coordinates}/>);
                 }
         }, [coordinates]);
 
@@ -127,7 +129,7 @@ const Main = () => {
                         <Geolocation locFunction={locMe} />
                         <div id="searchpanel__results">{citiesResults}</div>
                         <div className="searchpanel__weatherdata">{currentWeatherDiv}</div>
-                        <Map mapCoords={coordinates}/>
+                        {mapDiv}
                 </div>
         );
 
