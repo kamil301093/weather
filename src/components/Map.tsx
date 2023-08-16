@@ -1,35 +1,22 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import { useState, useEffect } from "react";
+import 'leaflet/dist/leaflet.css';
 
 const Map = (props: { mapCoords: any }) => {
 
-    const [mapDiv, setMapDiv] = useState<any>("");
-    const [mapCoords, setMapCoords] = useState<Array<any>>();
-
-    setMapCoords(props.mapCoords);
-
-    useEffect(() => {
-
-        if (props.mapCoords != null || props.mapCoords != undefined) {
-            const coordsSplit = props.mapCoords.split(',');
-            setMapDiv(
-                <MapContainer center={[coordsSplit[0], coordsSplit[1]]} zoom={13} >
-                    < TileLayer attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                    <Marker position={[coordsSplit[0], coordsSplit[1]]}>
-                        <Popup>
-                            I am a pop-up!
-                        </Popup>
-                    </Marker>
-                </MapContainer >
-            )
-        } else {
-            setMapDiv("");
-        }
-    }, [mapCoords])
+    const coordsSplit = props.mapCoords.split(','); console.log(coordsSplit);
 
     return (
         <div className="map">
-            {mapDiv}
+            {
+                coordsSplit.length > 0 &&
+                <MapContainer center={[coordsSplit[0], coordsSplit[1]]} zoom={13}>
+                    <TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                    <Marker position={[coordsSplit[0], coordsSplit[1]]}>
+                        <Popup>I am a pop-up!</Popup>
+                    </Marker>
+                </MapContainer>
+            }
         </div >
     )
 }

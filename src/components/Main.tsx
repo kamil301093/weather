@@ -76,7 +76,7 @@ const Main = () => {
                                         return response.json()
                                 })
                                 .then(data => {
-                                        setCurrentWeather(data); console.log(data);
+                                        setCurrentWeather(data);
                                 });
                 }
         }, [coordinates]);

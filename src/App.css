@@ -97,9 +97,8 @@ body {
 }
 
 .leaflet-container {  
-  height: 100vh;  
-  width: 100%;  
-  z-index: 1;
+  height: 200px;  
+  width: 350px;  
 }
 
 .searchpanel {
