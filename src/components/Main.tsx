@@ -18,9 +18,9 @@ const Main = () => {
         const [keyword, setKeyword] = useState<string>("");
         const [showDeleteKeywordButton, setShowDeleteKeywordButton] = useState<boolean>(false);
         const [coordinates, setCoordinates] = useState<any>("");
-        const [activeCity, setActiveCity] = useState<string>("");
         const [currentWeather, setCurrentWeather] = useState<any>([]);
         const [currentWeatherDiv, setCurrentWeatherDiv] = useState<any>();
+        const [mapCoords, setMapCoords] = useState<any>();
         const [mapDiv, setMapDiv] = useState<any>();
 
         const handleChange = (e: any) => {
@@ -28,11 +28,10 @@ const Main = () => {
                 setKeyword(value);
         }
 
-        const getCoords = (cit: string, lt: any, ln: any) => {
+        const getCoords = (lt: any, ln: any) => {
                 const ltPlusLn = '' + lt + ',' + ln + '';
                 setCoordinates(ltPlusLn);
-                setActiveCity(cit);
-                setKeyword("");
+                removeKeyword();
         }
 
         const removeKeyword = () => {
@@ -60,7 +59,7 @@ const Main = () => {
         useEffect(() => {
                 if (keyword.length > 0) {
                         if (cities.length > 0) {
-                                setCitiesResults(cities.map((ct: any) => (<Result city={ct.name} country={ct.country} coordsFunction={() => getCoords(ct.name, ct.lat, ct.lon)} />)));
+                                setCitiesResults(cities.map((ct: any) => (<Result city={ct.name} country={ct.country} coordsFunction={() => getCoords(ct.lat, ct.lon)} />)));
                         } else {
                                 setCitiesResults(<NoResults />);
                         }
@@ -79,17 +78,18 @@ const Main = () => {
                                 .then(data => {
                                         setCurrentWeather(data);
                                 });
-                        setMapDiv(<Map mapCoords={coordinates}/>);
+                        setMapCoords(coordinates);
                 }
         }, [coordinates]);
 
         useEffect(() => {
                 console.log(currentWeather)
                 if (currentWeather === "" || currentWeather === "undefined" || currentWeather.length === 0) {
+                        setCurrentWeatherDiv("");
                 } else {
                         setCurrentWeatherDiv(
                                 <Info
-                                        city={activeCity}
+                                        city={currentWeather.location.name}
                                         icon={currentWeather.current.condition.icon}
                                         header={currentWeather.current.condition.text}
                                         region={currentWeather.location.region}
@@ -113,6 +113,14 @@ const Main = () => {
                                 />);
                 }
         }, [currentWeather]);
+
+        useEffect(() => {
+                if (mapCoords != undefined) {
+                        setMapDiv(<Map mapCoords={coordinates} />); console.log(mapCoords)
+                } else {
+                        setMapDiv("");
+                }
+        }, [mapCoords]);
 
         function locMe() {
                 navigator.geolocation.getCurrentPosition(function (position) {
