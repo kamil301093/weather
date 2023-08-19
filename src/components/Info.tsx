@@ -1,14 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock } from '@fortawesome/free-solid-svg-icons/faClock';
-import { faEarthAfrica } from '@fortawesome/free-solid-svg-icons/faEarthAfrica';
-
-const Info = (props: { title:string; city: string, icon: string, header: string, region:string, country:string, localtime:string, timezone:string, lastupdate: string, timeOfDay: number, tempC: number, tempF: number, feelslikeC: number, feelslikeF: number, cloud: number, uv: number, windDir: number, windMph: number, windKph: number, humidity: number, pressureM: number, pressureI: number }) => {
+const Info = (props: { title:string; icon: string, header: string, lastupdate: string, timeOfDay: number, tempC: number, tempF: number, feelslikeC: number, feelslikeF: number, cloud: number, uv: number, windDir: number, windMph: number, windKph: number, humidity: number, pressureM: number, pressureI: number }) => {
 
         const dayOrNight = props.timeOfDay;
 
         return (
                 <div className="info">
-                        <h2 className="info__city">{props.city}</h2>
                         <div className="info__row">
                                 <div className="info__panel info__panel--big">
                                         <div>
@@ -17,21 +12,6 @@ const Info = (props: { title:string; city: string, icon: string, header: string,
                                         </div>
                                         <div>
                                                 <h3 className="info__header">{props.tempC + " C (" + props.tempF + " F)"}</h3>
-                                        </div>
-                                </div>
-                        </div>
-                        <div className="info__row">
-                                <div className="info__panel info__panel--half">
-                                        <FontAwesomeIcon icon={faEarthAfrica} size="2xl" />
-                                        <div>
-                                                {props.region} {props.country}
-                                        </div>
-                                </div>
-                                <div className="info__panel info__panel--half">
-                                        <FontAwesomeIcon icon={faClock} size="2xl" />
-                                        <div>
-                                                localtime {props.localtime}
-                                                timzeone {props.timezone}
                                         </div>
                                 </div>
                         </div>

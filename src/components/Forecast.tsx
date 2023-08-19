@@ -1,8 +1,8 @@
-const Info = (props: { title: string; icon: string, header: string, maxTempC: number, maxTempF: number, minTempC: number, minTempF: number, avgTempC: number, avgTempF: number, maxWindMph: number, maxWindKph: number, rain:number, rainChancePercent: number, snow:number, snowChancePercent:number, avgHumidity: number, uv: number, sunrise: string, sunset: string }) => {
+const Info = (props: { title: string; icon: string, header: string, maxTempC: number, maxTempF: number, minTempC: number, minTempF: number, avgTempC: number, avgTempF: number, maxWindMph: number, maxWindKph: number, rain: number, rainChancePercent: number, snow: number, snowChancePercent: number, avgHumidity: number, uv: number, sunrise: string, sunset: string }) => {
 
-        const willItRain = (yesOrNow:number) => {
-                let chance:string;
-                if(yesOrNow == 1) {
+        const willItRain = (yesOrNow: number) => {
+                let chance: string;
+                if (yesOrNow == 1) {
                         chance = "yes";
                 } else {
                         chance = "no";
@@ -14,18 +14,19 @@ const Info = (props: { title: string; icon: string, header: string, maxTempC: nu
         const snowChance = willItRain(props.snow);
 
         return (
-                <div className="info"><div className="info__row">
-                        <div className="info__panel info__panel--big">
-                                <div>
-                                        <img className="info__img" src={props.icon} alt="weather icon" />
-                                        {props.header}
-                                </div>
-                                <div>
-                                        <h3 className="info__header">{props.maxTempC + " C (" + props.maxTempF + " F)"}</h3>
+                <div className="info">
+                        <h3 className="info__subtitle">{props.title}</h3>
+                        <div className="info__row">
+                                <div className="info__panel info__panel--big">
+                                        <div>
+                                                <img className="info__img" src={props.icon} alt="weather icon" />
+                                                {props.header}
+                                        </div>
+                                        <div>
+                                                <h3 className="info__header">{props.maxTempC + " C (" + props.maxTempF + " F)"}</h3>
+                                        </div>
                                 </div>
                         </div>
-                </div>
-                        <h3 className="info__subtitle">{props.title}</h3>
                         <div className="info__row info__row--table">
                                 <div className="info__title">min temp</div>
                                 <div className="info__data">{props.minTempC + " C (" + props.minTempF + " F)"}</div>

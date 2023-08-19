@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Search from './Search';
 import Result from './Result';
+import Location from './Location';
 import Info from './Info';
 import Forecast from './Forecast';
 import Loading from './Loading';
@@ -20,6 +21,7 @@ const Main = () => {
   const [showDeleteKeywordButton, setShowDeleteKeywordButton] = useState<boolean>(false);
   const [coordinates, setCoordinates] = useState<any>("");
   const [weatherData, setWeatherData] = useState<any>([]);
+  const [locationDiv, setLocationDiv] = useState<any>();
   const [currentWeatherDiv, setCurrentWeatherDiv] = useState<any>();
   const [forecastWeatherDiv, setForecastWeatherDiv] = useState<any>();
   const [mapCoords, setMapCoords] = useState<any>();
@@ -89,22 +91,26 @@ const Main = () => {
     if (weatherData === "" || weatherData === "undefined" || weatherData.length === 0) {
       setCurrentWeatherDiv("");
     } else {
-      setCurrentWeatherDiv(
-        <Info
-          title={"Current weather"}
+      setLocationDiv(
+        <Location
           city={weatherData.location.name}
-          icon={weatherData.current.condition.icon}
-          header={weatherData.current.condition.text}
           region={weatherData.location.region}
           country={weatherData.location.country}
           localtime={weatherData.location.localtime}
           timezone={weatherData.location.tz_id}
+        />
+      );
+      setCurrentWeatherDiv(
+        <Info
+          title={"Current weather"}
+          icon={weatherData.current.condition.icon}
+          header={weatherData.current.condition.text}
           lastupdate={weatherData.current.last_updated}
           timeOfDay={weatherData.current.is_day}
           tempC={weatherData.current.temp_c}
           tempF={weatherData.current.temp_f}
           feelslikeC={weatherData.current.feelslike_c}
-          feelslikeF={weatherData.feelslike_f}
+          feelslikeF={weatherData.current.feelslike_f}
           cloud={weatherData.current.cloud}
           uv={weatherData.current.uv}
           windDir={weatherData.current.wind_dir}
@@ -161,6 +167,7 @@ const Main = () => {
       <FontAwesomeIcon id="searchpanel__delete" icon={faX} onClick={removeKeyword} style={{ display: showDeleteKeywordButton == true ? 'inline-block' : 'none' }} />
       <Geolocation locFunction={locMe} />
       <div id="searchpanel__results">{citiesResults}</div>
+      {locationDiv}
       <div className="searchpanel__weatherdata">{currentWeatherDiv}</div>
       <div className="searchpanel__weatherdata">{forecastWeatherDiv}</div>
       {mapDiv}
