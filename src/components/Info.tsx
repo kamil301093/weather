@@ -2,26 +2,18 @@ const Info = (props: { title: string; icon: string, header: string, lastupdate: 
 
         const dayOrNight = props.timeOfDay;
 
-        const showWarning = (uvLevel) => {
-                let warning;
-                switch (uvLevel) {
-                        case uvLevel <= 2:
-                                warning = "low, no danger";
-                                break;
-                        case uvLevel > 2 && <= 5:
-                                day = "moderate, stay in shade when the Sun is strongest";
-                                break;
-                        case uvLevel > 5 && <= 7:
-                                day = "high, risk of harm from unprotected sun exposure";
-                                break;
-
-                        case uvLevel > 7 && <= 10:
-                                day = "very high, very high risk of harm from unprotected sun exposure";
-                                break;
-
-                        case uvLevel < 10:
-                                day = "extreme, extreme risk of harm from unprotected sun exposure!";
-                                break;
+        const showWarning = (uvLevel:number) => {
+                let warning:string;
+                if (uvLevel <= 2) {
+                        warning = "low, no danger";
+                } else if (uvLevel > 2 && uvLevel <= 5) {
+                        warning = "moderate, stay in shade when the Sun is strongest";
+                } else if (uvLevel > 5 && uvLevel <= 7) {
+                        warning = "high, risk of harm from unprotected sun exposure";
+                } else if (uvLevel > 7 && uvLevel <= 10) {
+                        warning = "very high, very high risk of harm from unprotected sun exposure";
+                } else {
+                        warning = "extreme, extreme risk of harm from unprotected sun exposure!";
                 }
                 return warning;
         }
