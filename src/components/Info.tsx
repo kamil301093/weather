@@ -5,15 +5,15 @@ const Info = (props: { title: string; icon: string, header: string, lastupdate: 
         const showWarning = (uvLevel:number) => {
                 let warning:string;
                 if (uvLevel <= 2) {
-                        warning = "low, no danger";
+                        warning = "low, no danger for the average person";
                 } else if (uvLevel > 2 && uvLevel <= 5) {
                         warning = "moderate, stay in shade when the Sun is strongest";
                 } else if (uvLevel > 5 && uvLevel <= 7) {
-                        warning = "high, risk of harm from unprotected sun exposure";
+                        warning = "high, protection against skin and eye damage is needed";
                 } else if (uvLevel > 7 && uvLevel <= 10) {
-                        warning = "very high, very high risk of harm from unprotected sun exposure";
+                        warning = "very high, take extra precautions because unprotected skin and eyes will be damaged!";
                 } else {
-                        warning = "extreme, extreme risk of harm from unprotected sun exposure!";
+                        warning = "extreme, take all precautions because unprotected skin and eyes can burn in minutes!";
                 }
                 return warning;
         }

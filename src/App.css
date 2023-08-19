@@ -8,25 +8,25 @@ body {
 }
 
 .footer {
-  display:flex;
+  display: flex;
   justify-content: space-between;
 }
 
 .header {
-  background:#05B4F2;
-  color:#fff;
+  background: #05B4F2;
+  color: #fff;
   font-size: 32px;
-  text-align:left;
+  text-align: left;
 }
 
 .header__subtitle {
-  font-size:13px;
+  font-size: 13px;
   margin: 0 auto;
   width: 400px;
 }
 
 .header__title {
-  font-size:22px;
+  font-size: 22px;
   margin: 0 auto;
   width: 400px;
 }
@@ -39,7 +39,7 @@ body {
 .info__city {
   color: #000;
   font-size: 24px;
-  text-align:left;
+  text-align: left;
 }
 
 .info__data {
@@ -48,34 +48,34 @@ body {
 }
 
 .info__header {
-  padding:0;
+  padding: 0;
 }
 
 .info__img {
-  height:80px;
-  width:80px;
+  height: 80px;
+  width: 80px;
 }
 
 .info__panel {
-  background:#f0f0f0;
-  border-radius:10px;
-  color:#000000;
-  display:flex;
-  justify-content:space-between;
+  background: #f0f0f0;
+  border-radius: 10px;
+  color: #000000;
+  display: flex;
+  justify-content: space-between;
 }
 
 .info__panel--big {
-  padding:0 40px 0 40px;
-  width:100%;
+  padding: 0 40px 0 40px;
+  width: 100%;
 }
 
 .info__panel--half {
-  padding:0 20px 0 20px;
-  width:35%;
+  padding: 0 20px 0 20px;
+  width: 35%;
 }
 
 .info__subtitle {
-  text-align:left;
+  text-align: left;
 }
 
 .info__row {
@@ -85,7 +85,7 @@ body {
 }
 
 .info__row--table {
-  border-bottom:1px solid #F2f2f2;
+  border-bottom: 1px solid #F2f2f2;
   color: #383838;
   font-size: 13px;
   line-height: 24px;
@@ -96,9 +96,9 @@ body {
   width: 200px;
 }
 
-.leaflet-container {  
-  height: 200px;  
-  width: 400px;  
+.leaflet-container {
+  height: 200px;
+  width: 400px;
 }
 
 .searchpanel {
@@ -107,7 +107,7 @@ body {
 }
 
 #searchpanel__delete {
-  cursor:pointer;
-  display:none;
-  margin-left:-20px;
+  cursor: pointer;
+  display: none;
+  margin-left: -20px;
 }
