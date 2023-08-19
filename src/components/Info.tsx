@@ -1,6 +1,32 @@
-const Info = (props: { title:string; icon: string, header: string, lastupdate: string, timeOfDay: number, tempC: number, tempF: number, feelslikeC: number, feelslikeF: number, cloud: number, uv: number, windDir: number, windMph: number, windKph: number, humidity: number, pressureM: number, pressureI: number }) => {
+const Info = (props: { title: string; icon: string, header: string, lastupdate: string, timeOfDay: number, tempC: number, tempF: number, feelslikeC: number, feelslikeF: number, cloud: number, uv: number, windDir: number, windMph: number, windKph: number, humidity: number, pressureM: number, pressureI: number }) => {
 
         const dayOrNight = props.timeOfDay;
+
+        const showWarning = (uvLevel) => {
+                let warning;
+                switch (uvLevel) {
+                        case uvLevel <= 2:
+                                warning = "low, no danger";
+                                break;
+                        case uvLevel > 2 && <= 5:
+                                day = "moderate, stay in shade when the Sun is strongest";
+                                break;
+                        case uvLevel > 5 && <= 7:
+                                day = "high, risk of harm from unprotected sun exposure";
+                                break;
+
+                        case uvLevel > 7 && <= 10:
+                                day = "very high, very high risk of harm from unprotected sun exposure";
+                                break;
+
+                        case uvLevel < 10:
+                                day = "extreme, extreme risk of harm from unprotected sun exposure!";
+                                break;
+                }
+                return warning;
+        }
+
+        const uvWarning = showWarning(props.uv);
 
         return (
                 <div className="info">
@@ -34,7 +60,7 @@ const Info = (props: { title:string; icon: string, header: string, lastupdate: s
                         </div>
                         <div className="info__row info__row--table">
                                 <div className="info__title">UV (1-11 scale)</div>
-                                <div className="info__data">{props.uv}</div>
+                                <div className="info__data">{props.uv + " (" + uvWarning + ")"}</div>
                         </div>
                         <div className="info__row info__row--table">
                                 <div className="info__title">wind direction</div>
