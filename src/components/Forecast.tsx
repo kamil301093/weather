@@ -13,6 +13,24 @@ const Info = (props: { title: string; icon: string, header: string, maxTempC: nu
         const rainChance = willItRain(props.rain);
         const snowChance = willItRain(props.snow);
 
+        const showWarning = (uvLevel:number) => {
+                let warning:string;
+                if (uvLevel <= 2) {
+                        warning = "low, no danger";
+                } else if (uvLevel > 2 && uvLevel <= 5) {
+                        warning = "moderate, stay in shade when the Sun is strongest";
+                } else if (uvLevel > 5 && uvLevel <= 7) {
+                        warning = "high, risk of harm from unprotected sun exposure";
+                } else if (uvLevel > 7 && uvLevel <= 10) {
+                        warning = "very high, very high risk of harm from unprotected sun exposure";
+                } else {
+                        warning = "extreme, extreme risk of harm from unprotected sun exposure!";
+                }
+                return warning;
+        }
+
+        const uvWarning = showWarning(props.uv);
+
         return (
                 <div className="info">
                         <h3 className="info__subtitle">{props.title}</h3>
@@ -53,7 +71,7 @@ const Info = (props: { title: string; icon: string, header: string, maxTempC: nu
                         </div>
                         <div className="info__row info__row--table">
                                 <div className="info__title">UV (1-11 scale)</div>
-                                <div className="info__data">{props.uv}</div>
+                                <div className="info__data">{props.uv + " (" + uvWarning + ")"}</div>
                         </div>
                         <div className="info__row info__row--table">
                                 <div className="info__title">sunrise</div>
