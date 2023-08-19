@@ -50,7 +50,7 @@ const Main = () => {
           return response.json()
         })
         .then(data => {
-          setCities(data); console.log(data);
+          setCities(data);
         })
     } else {
       setCitiesResults("");
@@ -117,25 +117,31 @@ const Main = () => {
       setForecastWeatherDiv(
         <Forecast
           title={"Forecast"}
-          icon={weatherData.forecast.forecastday.day.condition.icon}
-          header={weatherData.current.condition.text}
-          maxTempC={weatherData.forecast.forecastday.day.maxtemp_c}
-          maxTempF={weatherData.forecast.forecastday.day.maxtemp_f}
-          minTempC={weatherData.forecast.forecastday.day.mintemp_c}
-          minTempF={weatherData.forecast.forecastday.day.mintemp_f}
-          avgTempC={weatherData.forecast.forecastday.day.avgtemp_c}
-          avgTempF={weatherData.forecast.forecastday.day.avgtemp_f}
-          maxWindMph={weatherData.forecast.forecastday.day.maxwind_mph}
-          maxWindKph={weatherData.forecast.forecastday.day.maxwind_kph}
-          avgHumidity={weatherData.forecast.forecastday.day.avghumidity}
-          uv={weatherData.forecast.forecastday.day.uv}
+          icon={weatherData.forecast.forecastday[0].day.condition.icon}
+          header={weatherData.forecast.forecastday[0].day.condition.text}
+          maxTempC={weatherData.forecast.forecastday[0].day.maxtemp_c}
+          maxTempF={weatherData.forecast.forecastday[0].day.maxtemp_f}
+          minTempC={weatherData.forecast.forecastday[0].day.mintemp_c}
+          minTempF={weatherData.forecast.forecastday[0].day.mintemp_f}
+          avgTempC={weatherData.forecast.forecastday[0].day.avgtemp_c}
+          avgTempF={weatherData.forecast.forecastday[0].day.avgtemp_f}
+          maxWindMph={weatherData.forecast.forecastday[0].day.maxwind_mph}
+          maxWindKph={weatherData.forecast.forecastday[0].day.maxwind_kph}
+          rain={weatherData.forecast.forecastday[0].day.daily_will_it_rain}
+          rainChancePercent={weatherData.forecast.forecastday[0].day.daily_chance_of_rain}
+          snow={weatherData.forecast.forecastday[0].day.daily_will_it_snow}
+          snowChancePercent={weatherData.forecast.forecastday[0].day.daily_chance_of_snow}
+          avgHumidity={weatherData.forecast.forecastday[0].day.avghumidity}
+          uv={weatherData.forecast.forecastday[0].day.uv}
+          sunrise={weatherData.forecast.forecastday[0].astro.sunrise}
+          sunset={weatherData.forecast.forecastday[0].astro.sunset}
         />);
     }
   }, [weatherData]);
 
   useEffect(() => {
     if (mapCoords != undefined) {
-      setMapDiv(<Map mapCoords={coordinates} />); console.log(mapDiv)
+      setMapDiv(<Map mapCoords={coordinates} />);
     } else {
       setMapDiv("");
     }
