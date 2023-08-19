@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons/faClock';
 import { faEarthAfrica } from '@fortawesome/free-solid-svg-icons/faEarthAfrica';
 
-const Info = (props: { city: string, icon: string, header: string, region:string, country:string, localtime:string, timezone:string, lastupdate: string, timeOfDay: number, tempC: number, tempF: number, feelslikeC: number, feelslikeF: number, cloud: number, uv: number, windDir: number, windMph: number, windKph: number, humidity: number, pressureM: number, pressureI: number }) => {
+const Info = (props: { title:string; city: string, icon: string, header: string, region:string, country:string, localtime:string, timezone:string, lastupdate: string, timeOfDay: number, tempC: number, tempF: number, feelslikeC: number, feelslikeF: number, cloud: number, uv: number, windDir: number, windMph: number, windKph: number, humidity: number, pressureM: number, pressureI: number }) => {
 
         const dayOrNight = props.timeOfDay;
 
@@ -35,7 +35,7 @@ const Info = (props: { city: string, icon: string, header: string, region:string
                                         </div>
                                 </div>
                         </div>
-                        <h3 className="info__subtitle">Features</h3>
+                        <h3 className="info__subtitle">{props.title}</h3>
                         <div className="info__row info__row--table">
                                 <div className="info__title">last update</div>
                                 <div className="info__data">{props.lastupdate}</div>
