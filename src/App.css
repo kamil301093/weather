@@ -12,6 +12,10 @@ body {
   justify-content: space-between;
 }
 
+.geolocation {
+  display:inline-block;
+}
+
 .header {
   background: #05B4F2;
   color: #fff;
@@ -99,6 +103,11 @@ body {
 .leaflet-container {
   height: 200px;
   width: 400px;
+}
+
+.main {
+  margin: 0 auto;
+  width: 450px;
 }
 
 .searchpanel {

@@ -161,16 +161,18 @@ const Main = () => {
   }
 
   return (
-    <div className="searchpanel">
-      <FontAwesomeIcon icon={faCity} />
-      <Search placeholder="Insert city name here" value={keyword} onChange={handleChange} />
-      <FontAwesomeIcon id="searchpanel__delete" icon={faX} onClick={removeKeyword} style={{ display: showDeleteKeywordButton == true ? 'inline-block' : 'none' }} />
-      <Geolocation locFunction={locMe} />
-      <div id="searchpanel__results">{citiesResults}</div>
-      {locationDiv}
-      <div className="searchpanel__weatherdata">{currentWeatherDiv}</div>
-      <div className="searchpanel__weatherdata">{forecastWeatherDiv}</div>
-      {mapDiv}
+    <div className="main">
+      <div className="searchpanel">
+        <FontAwesomeIcon icon={faCity} />
+        <Search placeholder="Insert city name here" value={keyword} onChange={handleChange} />
+        <FontAwesomeIcon id="searchpanel__delete" icon={faX} onClick={removeKeyword} style={{ display: showDeleteKeywordButton == true ? 'inline-block' : 'none' }} />
+        <Geolocation locFunction={locMe} />
+        <div id="searchpanel__results">{citiesResults}</div>
+      </div>
+      <div className="data">{locationDiv}</div>
+      <div className="data">{currentWeatherDiv}</div>
+      <div className="data">{forecastWeatherDiv}</div>
+      <div className="data">{mapDiv}</div>
     </div>
   );
 
