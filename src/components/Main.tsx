@@ -144,16 +144,16 @@ const Main = () => {
           sunrise={weatherData.forecast.forecastday[0].astro.sunrise}
           sunset={weatherData.forecast.forecastday[0].astro.sunset}
         />);
-        setHoursDiv(
+        setHoursDiv(weatherData.map((data:any) => (
           <Hourly
-          time={weatherData.forecast.forecastday[0].hour[0].time}
-          icon={weatherData.forecast.forecastday[0].hour[0].condition.icon}
-          tempC={weatherData.forecast.forecastday[0].hour[0].temp_c}
-          tempF={weatherData.forecast.forecastday[0].hour[0].temp_f}
-          text={weatherData.forecast.forecastday[0].hour[0].condition.text}
-          chanceRain={weatherData.forecast.forecastday[0].hour[0].chance_of_rain}
-          chanceSnow={weatherData.forecast.forecastday[0].hour[0].chance_of_snow}
-          />);
+          time={data.forecast.forecastday[0].hour[0].time}
+          icon={data.forecast.forecastday[0].hour[0].condition.icon}
+          tempC={data.forecast.forecastday[0].hour[0].temp_c}
+          tempF={data.forecast.forecastday[0].hour[0].temp_f}
+          text={data.forecast.forecastday[0].hour[0].condition.text}
+          chanceRain={data.forecast.forecastday[0].hour[0].chance_of_rain}
+          chanceSnow={data.forecast.forecastday[0].hour[0].chance_of_snow}
+          />)));
     }
   }, [weatherData]);
 
