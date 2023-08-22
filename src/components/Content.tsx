@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Content = styled.div`
         margin:0 auto;
-        width:450px;
+        width:400px;
 `;
 
 export default Content;

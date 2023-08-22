@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Search from './Search';
 import Result from './Result';
 import Location from './Location';
 import Info from './Info';
@@ -11,7 +10,6 @@ import Geolocation from './Geolocation';
 import Map from './Map';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCity } from '@fortawesome/free-solid-svg-icons/faCity';
 import { faX } from '@fortawesome/free-solid-svg-icons/faX';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
@@ -229,12 +227,15 @@ const Main = () => {
   return (
     <div className="main">
       <div className="searchpanel">
-        <FontAwesomeIcon icon={faCity} />
-        <Search placeholder="Insert city name here" value={keyword} onChange={handleChange} />
-        <FontAwesomeIcon id="searchpanel__delete" icon={faX} onClick={removeKeyword} style={{ display: showDeleteKeywordButton == true ? 'inline-block' : 'none' }} />
-        <Geolocation locFunction={locMe} />
-        <div className="searchpanel__results">{citiesResults}</div>
+        <div className="searchpanel__left">
+          <input className="rectangle searchpanel__input" type="text" placeholder="Insert city name here" value={keyword} onChange={handleChange} />
+          <FontAwesomeIcon className="searchpanel__delete" icon={faX} onClick={removeKeyword} style={{ display: showDeleteKeywordButton == true ? 'inline-block' : 'none' }} />
+        </div>
+        <div className="searchpanel__right">
+          <Geolocation locFunction={locMe} />
+        </div>
       </div>
+      <div className="results">{citiesResults}</div>
       <div className="data">{locationDiv}</div>
       <div className="data">{currentWeatherDiv}</div>
       <div>
