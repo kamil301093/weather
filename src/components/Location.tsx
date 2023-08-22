@@ -16,9 +16,9 @@ const Location = (props: { city: string, region: string, country: string, localt
                                 </div>
                                 <div className="info__panel info__panel--half">
                                         <FontAwesomeIcon icon={faClock} size="2xl" />
-                                        <div>
-                                                localtime {props.localtime}
-                                                timzeone {props.timezone}
+                                        <div className="info__localtime">
+                                                {props.localtime}
+                                                {"(" + props.timezone + ")"}
                                         </div>
                                 </div>
                         </div>

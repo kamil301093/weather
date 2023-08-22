@@ -2,8 +2,8 @@ const Info = (props: { title: string; icon: string, header: string, lastupdate: 
 
         const dayOrNight = props.timeOfDay;
 
-        const showWarning = (uvLevel:number) => {
-                let warning:string;
+        const showWarning = (uvLevel: number) => {
+                let warning: string;
                 if (uvLevel <= 2) {
                         warning = "low, no danger for the average person";
                 } else if (uvLevel > 2 && uvLevel <= 5) {
@@ -26,10 +26,10 @@ const Info = (props: { title: string; icon: string, header: string, lastupdate: 
                                 <div className="info__panel info__panel--big">
                                         <div>
                                                 <img className="info__img" src={props.icon} alt="weather icon" />
-                                                {props.header}
                                         </div>
                                         <div>
                                                 <h3 className="info__header">{props.tempC + " C (" + props.tempF + " F)"}</h3>
+                                                <h4 className="info__description">{props.header}</h4>
                                         </div>
                                 </div>
                         </div>

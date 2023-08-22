@@ -144,18 +144,14 @@ const Main = () => {
           sunrise={weatherData.forecast.forecastday[0].astro.sunrise}
           sunset={weatherData.forecast.forecastday[0].astro.sunset}
         />);
-        setHoursDiv(weatherData.forecast.forecastday[0].hour.map((data:any) => (
-          <Hourly
+      setHoursDiv(weatherData.forecast.forecastday[0].hour.map((data: any) => (
+        <Hourly
           time={data.time}
           icon={data.condition.icon}
           tempC={data.temp_c}
           tempF={data.temp_f}
           text={data.condition.text}
-          rain={data.will_it_rain}
-          rainChancePercent={data.chance_of_rain}
-          snow={data.will_it_snow}
-          snowChancePercent={data.chance_of_snow}
-          />)));
+        />)));
     }
   }, [weatherData]);
 
