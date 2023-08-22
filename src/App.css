@@ -1,3 +1,7 @@
+a {
+  cursor: pointer;
+}
+
 body {
   background: #fff;
   font-family: 'Roboto', sans-serif;
@@ -13,7 +17,7 @@ body {
 }
 
 .geolocation {
-  display:inline-block;
+  display: inline-block;
 }
 
 .header {
@@ -36,10 +40,10 @@ body {
 }
 
 .hourly {
-  display:flex;
+  display: flex;
   justify-content: space-between;
-  margin:0 auto;
-  width:400px;
+  margin: 0 auto;
+  width: 400px;
 }
 
 .hourly__hour {
@@ -47,7 +51,7 @@ body {
 }
 
 .hourly__icon {
-  width:40px;
+  width: 40px;
 }
 
 .info {

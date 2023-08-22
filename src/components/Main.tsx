@@ -81,7 +81,7 @@ const Main = () => {
 
   useEffect(() => {
     if (coordinates !== "") {
-      let url = 'http://api.weatherapi.com/v1/forecast.json?key=cfb427d15f6e4de9951181216232004&q=' + coordinates + '&days=7';
+      let url = 'http://api.weatherapi.com/v1/forecast.json?key=cfb427d15f6e4de9951181216232004&q=' + coordinates + '&days=3';
       fetch(url)
         .then(response => {
           return response.json()
@@ -233,12 +233,14 @@ const Main = () => {
         <Search placeholder="Insert city name here" value={keyword} onChange={handleChange} />
         <FontAwesomeIcon id="searchpanel__delete" icon={faX} onClick={removeKeyword} style={{ display: showDeleteKeywordButton == true ? 'inline-block' : 'none' }} />
         <Geolocation locFunction={locMe} />
-        <div id="searchpanel__results">{citiesResults}</div>
+        <div className="searchpanel__results">{citiesResults}</div>
       </div>
       <div className="data">{locationDiv}</div>
       <div className="data">{currentWeatherDiv}</div>
-      <a onClick={() => setForecastDay(forecastDay - 1)} style={{ visibility: showPrevButton == true ? 'visible' : 'hidden' }}><FontAwesomeIcon icon={faChevronLeft} /></a>
-      <a onClick={() => setForecastDay(forecastDay + 1)} style={{ visibility: showNextButton == true ? 'visible' : 'hidden' }}><FontAwesomeIcon icon={faChevronRight} /></a>
+      <div>
+        <a onClick={() => setForecastDay(forecastDay - 1)} style={{ visibility: showPrevButton == true ? 'visible' : 'hidden' }}><FontAwesomeIcon icon={faChevronLeft} /></a>
+        <a onClick={() => setForecastDay(forecastDay + 1)} style={{ visibility: showNextButton == true ? 'visible' : 'hidden' }}><FontAwesomeIcon icon={faChevronRight} /></a>
+      </div>
       <div className="data">{forecastWeatherDiv}</div>
       <div className="data">{hoursDiv}</div>
       <div className="data">{mapDiv}</div>
