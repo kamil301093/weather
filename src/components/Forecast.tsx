@@ -1,4 +1,4 @@
-const Info = (props: { title: string; icon: string, header: string, maxTempC: number, maxTempF: number, minTempC: number, minTempF: number, avgTempC: number, avgTempF: number, maxWindMph: number, maxWindKph: number, rain: number, rainChancePercent: number, snow: number, snowChancePercent: number, avgHumidity: number, uv: number, sunrise: string, sunset: string }) => {
+const Info = (props: { title: string; date:any, icon: string, header: string, maxTempC: number, maxTempF: number, minTempC: number, minTempF: number, avgTempC: number, avgTempF: number, maxWindMph: number, maxWindKph: number, rain: number, rainChancePercent: number, snow: number, snowChancePercent: number, avgHumidity: number, uv: number, sunrise: string, sunset: string }) => {
 
         const willItRain = (yesOrNow: number) => {
                 let chance: string;
@@ -33,7 +33,7 @@ const Info = (props: { title: string; icon: string, header: string, maxTempC: nu
 
         return (
                 <div className="info">
-                        <h3 className="info__subtitle">{props.title}</h3>
+                        <h3 className="info__subtitle">{props.title} for {props.date}</h3>
                         <div className="info__row">
                                 <div className="info__panel info__panel--big">
                                         <div>

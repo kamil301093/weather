@@ -11,7 +11,7 @@ const Location = (props: { city: string, region: string, country: string, localt
                                 <div className="info__panel info__panel--half">
                                         <FontAwesomeIcon icon={faEarthAfrica} size="2xl" />
                                         <div>
-                                                {props.region} {props.country}
+                                                {props.country}{props.region}
                                         </div>
                                 </div>
                                 <div className="info__panel info__panel--half">

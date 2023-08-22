@@ -76,7 +76,7 @@ const Main = () => {
 
   useEffect(() => {
     if (coordinates !== "") {
-      let url = 'http://api.weatherapi.com/v1/forecast.json?key=cfb427d15f6e4de9951181216232004&q=' + coordinates;
+      let url = 'http://api.weatherapi.com/v1/forecast.json?key=cfb427d15f6e4de9951181216232004&q=' + coordinates + '&days=7';
       fetch(url)
         .then(response => {
           return response.json()
@@ -125,6 +125,7 @@ const Main = () => {
       setForecastWeatherDiv(
         <Forecast
           title={"Forecast"}
+          date={weatherData.forecast.forecastday[0].date}
           icon={weatherData.forecast.forecastday[0].day.condition.icon}
           header={weatherData.forecast.forecastday[0].day.condition.text}
           maxTempC={weatherData.forecast.forecastday[0].day.maxtemp_c}

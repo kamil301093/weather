@@ -17,7 +17,7 @@ const Map = (props: { mapCoords: any }) => {
                     </Marker>
                 </MapContainer>
             }
-        </div >
+        </div>
     )
 }
 
