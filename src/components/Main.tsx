@@ -4,6 +4,7 @@ import Result from './Result';
 import Location from './Location';
 import Info from './Info';
 import Forecast from './Forecast';
+import Hourly from './Hourly';
 import Loading from './Loading';
 import NoResults from './NoResults';
 import Geolocation from './Geolocation';
@@ -24,6 +25,7 @@ const Main = () => {
   const [locationDiv, setLocationDiv] = useState<any>();
   const [currentWeatherDiv, setCurrentWeatherDiv] = useState<any>();
   const [forecastWeatherDiv, setForecastWeatherDiv] = useState<any>();
+  const [hoursDiv, setHoursDiv] = useState<any>();
   const [mapCoords, setMapCoords] = useState<any>();
   const [mapDiv, setMapDiv] = useState<any>();
 
@@ -142,6 +144,16 @@ const Main = () => {
           sunrise={weatherData.forecast.forecastday[0].astro.sunrise}
           sunset={weatherData.forecast.forecastday[0].astro.sunset}
         />);
+        setHoursDiv(
+          <Hourly
+          time={weatherData.forecast.forecastday[0].hour[0].time}
+          icon={weatherData.forecast.forecastday[0].hour[0].condition.icon}
+          tempC={weatherData.forecast.forecastday[0].hour[0].temp_c}
+          tempF={weatherData.forecast.forecastday[0].hour[0].temp_f}
+          text={weatherData.forecast.forecastday[0].hour[0].condition.text}
+          chanceRain={weatherData.forecast.forecastday[0].hour[0].chance_of_rain}
+          chanceSnow={weatherData.forecast.forecastday[0].hour[0].chance_of_snow}
+          />);
     }
   }, [weatherData]);
 
@@ -172,6 +184,7 @@ const Main = () => {
       <div className="data">{locationDiv}</div>
       <div className="data">{currentWeatherDiv}</div>
       <div className="data">{forecastWeatherDiv}</div>
+      <div className="data">{hoursDiv}</div>
       <div className="data">{mapDiv}</div>
     </div>
   );

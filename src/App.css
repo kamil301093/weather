@@ -78,14 +78,14 @@ body {
   width: 35%;
 }
 
-.info__subtitle {
-  text-align: left;
-}
-
 .info__row {
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+.info__subtitle {
+  text-align: left;
 }
 
 .info__row--table {
