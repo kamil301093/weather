@@ -3,7 +3,7 @@ import { faLocationCrosshairs } from '@fortawesome/free-solid-svg-icons/faLocati
 
 const Geolocation = (props: { locFunction: any }) => {
     return (
-            <a onClick={props.locFunction}><FontAwesomeIcon icon={faLocationCrosshairs}/></a>
+            <a className="searchpanel__geolocation" onClick={props.locFunction}><FontAwesomeIcon icon={faLocationCrosshairs} size="xl"/></a>
     )
 }
 

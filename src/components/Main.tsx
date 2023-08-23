@@ -236,7 +236,7 @@ const Main = () => {
         </div>
       </div>
       <div className="results">{citiesResults}</div>
-      <div className="data">{locationDiv}</div>
+      <div className="location">{locationDiv}</div>
       <div className="data">{currentWeatherDiv}</div>
       <div>
         <a onClick={() => setForecastDay(forecastDay - 1)} style={{ visibility: showPrevButton == true ? 'visible' : 'hidden' }}><FontAwesomeIcon icon={faChevronLeft} /></a>

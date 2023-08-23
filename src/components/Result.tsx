@@ -1,12 +1,11 @@
-import Item from './Item';
-
 const Result = (props: any) => {
         return (
-                <Item onClick={props.coordsFunction}>
-                        <span className="searchpanel__city">{props.city}</span>,
-                        <span className="searchpanel__country"> {props.country}</span>
-                </Item>
+                <a className="results__item" onClick={props.coordsFunction}>
+                        <span className="results__city">{props.city}, </span>
+                        <span className="results__country">{props.country}</span>
+                        <hr className="results__hr" />
+                </a>
         );
 };
 
-export default Result;
+export default Result; 

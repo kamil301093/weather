@@ -5,18 +5,18 @@ import { faEarthAfrica } from '@fortawesome/free-solid-svg-icons/faEarthAfrica';
 const Location = (props: { city: string, region: string, country: string, localtime: string, timezone: string, }) => {
 
         return (
-                <div className="info">
-                        <h2 className="info__city">{props.city}</h2>
-                        <div className="info__row">
-                                <div className="info__panel info__panel--half">
+                <div className="location__wrapper">
+                        <h2 className="location__city">{props.city}</h2>
+                        <div className="location__row">
+                                <div className="rectangle">
                                         <FontAwesomeIcon icon={faEarthAfrica} size="2xl" />
                                         <div>
                                                 {props.country}{props.region}
                                         </div>
                                 </div>
-                                <div className="info__panel info__panel--half">
+                                <div className="rectangle">
                                         <FontAwesomeIcon icon={faClock} size="2xl" />
-                                        <div className="info__localtime">
+                                        <div className="location__localtime">
                                                 {props.localtime}
                                                 {"(" + props.timezone + ")"}
                                         </div>
