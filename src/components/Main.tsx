@@ -237,13 +237,13 @@ const Main = () => {
       </div>
       <div className="results">{citiesResults}</div>
       <div className="location">{locationDiv}</div>
-      <div className="data">{currentWeatherDiv}</div>
+      <div className="current">{currentWeatherDiv}</div>
       <div>
         <a onClick={() => setForecastDay(forecastDay - 1)} style={{ visibility: showPrevButton == true ? 'visible' : 'hidden' }}><FontAwesomeIcon icon={faChevronLeft} /></a>
         <a onClick={() => setForecastDay(forecastDay + 1)} style={{ visibility: showNextButton == true ? 'visible' : 'hidden' }}><FontAwesomeIcon icon={faChevronRight} /></a>
       </div>
       <div className="data">{forecastWeatherDiv}</div>
-      <div className="data">{hoursDiv}</div>
+      <div className="hourly rectangle">{hoursDiv}</div>
       <div className="data">{mapDiv}</div>
     </div>
   );

@@ -8,17 +8,24 @@ const Location = (props: { city: string, region: string, country: string, localt
                 <div className="location__wrapper">
                         <h2 className="location__city">{props.city}</h2>
                         <div className="location__row">
-                                <div className="rectangle">
+                                <div className="location__item rectangle rectangle--half">
                                         <FontAwesomeIcon icon={faEarthAfrica} size="2xl" />
-                                        <div>
-                                                {props.country}{props.region}
+                                        <div className="location__text" >
+                                                <div className="location__country">
+                                                        {props.country}
+                                                </div>
+                                                <div className="location__region">
+                                                        {props.region}
+                                                </div>
                                         </div>
                                 </div>
-                                <div className="rectangle">
+                                <div className="location__item rectangle rectangle--half">
                                         <FontAwesomeIcon icon={faClock} size="2xl" />
-                                        <div className="location__localtime">
-                                                {props.localtime}
-                                                {"(" + props.timezone + ")"}
+                                        <div className="location__text" >
+                                                <div className="location__localtime">
+                                                        {props.localtime}
+                                                        {"(" + props.timezone + ")"}
+                                                </div>
                                         </div>
                                 </div>
                         </div>
