@@ -1,11 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons/faCircleInfo';
+import { useState } from 'react';
 
-const Info = (props: { title: string; icon: string, header: string, lastupdate: string, timeOfDay: number, tempC: number, tempF: number, feelslikeC: number, feelslikeF: number, cloud: number, uv: number, windDir: number, windMph: number, windKph: number, humidity: number, pressureM: number, pressureI: number }) => {
+const Current = (props: { title: string; icon: string, header: string, lastupdate: string, timeOfDay: number, tempC: number, tempF: number, feelslikeC: number, feelslikeF: number, cloud: number, uv: number, windDir: number, windMph: number, windKph: number, humidity: number, pressureM: number, pressureI: number }) => {
+
+        const [showUvWarning, setShowUvWarning] = useState<boolean>(false);
 
         const dayOrNight = props.timeOfDay;
 
-        const showWarning = (uvLevel: number) => {
+        const whichWarning = (uvLevel: number) => {
                 let warning: string;
                 if (uvLevel <= 2) {
                         warning = "low, no danger for the average person";
@@ -21,7 +24,15 @@ const Info = (props: { title: string; icon: string, header: string, lastupdate: 
                 return warning;
         }
 
-        const uvWarning = showWarning(props.uv);
+        const uvWarning = whichWarning(props.uv);
+
+        const toggleWarning = () => {
+                if (showUvWarning == false) {
+                        setShowUvWarning(true);
+                } else if (showUvWarning == true) {
+                        setShowUvWarning(false);
+                }
+        }
 
         return (
                 <div className="current__wrapper">
@@ -58,8 +69,8 @@ const Info = (props: { title: string; icon: string, header: string, lastupdate: 
                                         <div className="current__name">UV (1-11 scale)</div>
                                         <div className="current__data">
                                                 {props.uv}
-                                                <FontAwesomeIcon className="current__uv-info" icon={faCircleInfo} />
-                                                {uvWarning}
+                                                <FontAwesomeIcon className="current__uv-icon" icon={faCircleInfo} onClick={toggleWarning} />
+                                                <span className="current__uv-warning" style={{ visibility: showUvWarning == true ? 'visible' : 'hidden' }}>{uvWarning}</span>
                                         </div>
                                 </div>
                                 <hr className="current__hr" />
@@ -87,4 +98,4 @@ const Info = (props: { title: string; icon: string, header: string, lastupdate: 
         )
 }
 
-export default Info;
+export default Current;

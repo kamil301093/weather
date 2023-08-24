@@ -8,7 +8,7 @@ const Hourly = (props: { time: string, icon: string, tempC: number, tempF: numbe
     const hour = getHourAndDate(props.time)[1];
 
     return (
-        <div className="hourly__wrapper">
+        <div className="hourly__wrapper rectangle">
             <div className="hourly__info">
                 <div className="hourly__hour">
                     {hour}

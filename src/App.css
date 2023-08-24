@@ -73,9 +73,13 @@ body {
   width: 150px;
 }
 
-.current__uv-info {
+.current__uv-icon {
   cursor: pointer;
   margin-left: 4px;
+}
+
+.current__uv-warning {
+  position: absolute;
 }
 
 .footer {
@@ -83,13 +87,16 @@ body {
   justify-content: space-between;
 }
 
-.hourly {
-  padding: 15px 0;
-}
-
 .hourly__hour {
   text-align: left;
   width: 40px;
+}
+
+.hourly__hr {
+  background: #fff;
+  border: 0;
+  height: 2px;
+  width: 100%;
 }
 
 .hourly__icon {
@@ -107,13 +114,14 @@ body {
 
 .hourly__text {
   text-align: left;
-  width:100px;
+  width: 100px;
 }
 
 .hourly__wrapper {
   font-size: 14px;
-  height:45px;
+  height: 45px;
   margin: 0 auto;
+  padding: 10px 40px;
   width: 400px;
 }
 

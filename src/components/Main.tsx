@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Result from './Result';
 import Location from './Location';
-import Info from './Info';
+import Current from './Current';
 import Forecast from './Forecast';
 import Hourly from './Hourly';
 import Loading from './Loading';
@@ -107,7 +107,7 @@ const Main = () => {
         />
       );
       setCurrentWeatherDiv(
-        <Info
+        <Current
           title={"Current weather"}
           icon={weatherData.current.condition.icon}
           header={weatherData.current.condition.text}
@@ -243,7 +243,7 @@ const Main = () => {
         <a onClick={() => setForecastDay(forecastDay + 1)} style={{ visibility: showNextButton == true ? 'visible' : 'hidden' }}><FontAwesomeIcon icon={faChevronRight} /></a>
       </div>
       <div className="data">{forecastWeatherDiv}</div>
-      <div className="hourly rectangle">{hoursDiv}</div>
+      <div className="hourly">{hoursDiv}</div>
       <div className="data">{mapDiv}</div>
     </div>
   );
