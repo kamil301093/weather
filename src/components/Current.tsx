@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons/faCircleInfo';
+import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark';
 import { useState } from 'react';
 
 const Current = (props: { title: string; icon: string, header: string, lastupdate: string, timeOfDay: number, tempC: number, tempF: number, feelslikeC: number, feelslikeF: number, cloud: number, uv: number, windDir: number, windMph: number, windKph: number, humidity: number, pressureM: number, pressureI: number }) => {
@@ -32,6 +33,10 @@ const Current = (props: { title: string; icon: string, header: string, lastupdat
                 } else if (showUvWarning == true) {
                         setShowUvWarning(false);
                 }
+        }
+
+        const closeWarning = () => {
+                setShowUvWarning(false);
         }
 
         return (
@@ -70,7 +75,10 @@ const Current = (props: { title: string; icon: string, header: string, lastupdat
                                         <div className="current__data">
                                                 {props.uv}
                                                 <FontAwesomeIcon className="current__uv-icon" icon={faCircleInfo} onClick={toggleWarning} />
-                                                <span className="current__uv-warning" style={{ visibility: showUvWarning == true ? 'visible' : 'hidden' }}>{uvWarning}</span>
+                                                <div className="current__uv-warning" style={{ visibility: showUvWarning == true ? 'visible' : 'hidden' }}>
+                                                        <a className="current_uv-warning-close" onClick={closeWarning}><FontAwesomeIcon icon={faXmark} size="sm" /></a>
+                                                        {uvWarning}
+                                                </div>
                                         </div>
                                 </div>
                                 <hr className="current__hr" />

@@ -79,7 +79,18 @@ body {
 }
 
 .current__uv-warning {
+  background: #fff;
+  border-radius: 8px;
+  font-size:13px;
+  line-height: 20px;
+  padding:10px;
   position: absolute;
+  width:200px;
+}
+
+.current_uv-warning-close {
+  display:block;
+  text-align: right;
 }
 
 .footer {
