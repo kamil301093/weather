@@ -27,6 +27,10 @@ body {
   width: 400px;
 }
 
+.current__city {
+  text-align: left;
+}
+
 .current__data, .current__name, .forecast__data, .forecast__name {
   text-align: left;
   width: 160px;
@@ -55,6 +59,10 @@ body {
   padding: 15px 0;
 }
 
+.current__region {
+  font-size: 12px;
+}
+
 .current__row, .forecast__row {
   display: flex;
   font-size: 14px;
@@ -64,13 +72,12 @@ body {
   width: 320px;
 }
 
-.current__subtitle {
+.current__subtitle, .forecast__subtitle {
   text-align: left;
 }
 
-.current__text {
-  text-align: left;
-  width: 150px;
+.current__temp {
+  font-size:30px;
 }
 
 .current__uv-icon, .forecast__uv-icon {
@@ -103,9 +110,18 @@ body {
   justify-content: space-between;
 }
 
+.forecast__nav {
+  margin:0 10px -38px 0;
+  text-align: right;
+}
+
+.forecast__navarrow {
+  padding:0 5px;
+}
+
 .hourly__hour {
   text-align: left;
-  width: 40px;
+  width: 60px;
 }
 
 .hourly__hr {
@@ -116,16 +132,17 @@ body {
 }
 
 .hourly__icon {
+  padding-right:20px;
   width: 40px;
 }
 
 .hourly__info {
   display: flex;
-  justify-content: space-between;
 }
 
 .hourly__temp {
   text-align: left;
+  width: 90px;
 }
 
 .hourly__text {
@@ -153,28 +170,6 @@ body {
 .loading__icon {
   margin: 15px auto;
   position: absolute;
-}
-
-.location {
-  margin: 0 auto;
-}
-
-.location__city {
-  text-align: left;
-}
-
-.location__item {
-  display: flex;
-  font-size: 13px;
-}
-
-.location__row {
-  display: flex;
-  justify-content: space-between;
-}
-
-.location__text {
-  width: 100px;
 }
 
 .main {

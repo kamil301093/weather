@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Result from './Result';
-import Location from './Location';
 import Current from './Current';
 import Forecast from './Forecast';
 import Hourly from './Hourly';
@@ -22,7 +21,6 @@ const Main = () => {
   const [showDeleteKeywordButton, setShowDeleteKeywordButton] = useState<boolean>(false);
   const [coordinates, setCoordinates] = useState<any>("");
   const [weatherData, setWeatherData] = useState<any>([]);
-  const [locationDiv, setLocationDiv] = useState<any>();
   const [currentWeatherDiv, setCurrentWeatherDiv] = useState<any>();
   const [forecastWeatherDiv, setForecastWeatherDiv] = useState<any>();
   const [forecastDay, setForecastDay] = useState<number>(0);
@@ -97,18 +95,14 @@ const Main = () => {
       setCurrentWeatherDiv("");
     } else {
       setShowNextButton(true);
-      setLocationDiv(
-        <Location
+      setCurrentWeatherDiv(
+        <Current
+          title={"Current weather"}
           city={weatherData.location.name}
           region={weatherData.location.region}
           country={weatherData.location.country}
           localtime={weatherData.location.localtime}
           timezone={weatherData.location.tz_id}
-        />
-      );
-      setCurrentWeatherDiv(
-        <Current
-          title={"Current weather"}
           icon={weatherData.current.condition.icon}
           header={weatherData.current.condition.text}
           lastupdate={weatherData.current.last_updated}
@@ -236,14 +230,15 @@ const Main = () => {
         </div>
       </div>
       <div className="results">{citiesResults}</div>
-      <div className="location">{locationDiv}</div>
       <div className="current">{currentWeatherDiv}</div>
-      <div>
-        <a onClick={() => setForecastDay(forecastDay - 1)} style={{ visibility: showPrevButton == true ? 'visible' : 'hidden' }}><FontAwesomeIcon icon={faChevronLeft} /></a>
-        <a onClick={() => setForecastDay(forecastDay + 1)} style={{ visibility: showNextButton == true ? 'visible' : 'hidden' }}><FontAwesomeIcon icon={faChevronRight} /></a>
+      <div className="forecast">
+        <div className="forecast__nav">
+          <a className="forecast__navarrow" onClick={() => setForecastDay(forecastDay - 1)} style={{ visibility: showPrevButton == true ? 'visible' : 'hidden' }}><FontAwesomeIcon icon={faChevronLeft} /></a>
+          <a className="forecast__navarrow" onClick={() => setForecastDay(forecastDay + 1)} style={{ visibility: showNextButton == true ? 'visible' : 'hidden' }}><FontAwesomeIcon icon={faChevronRight} /></a>
+        </div>
+        {forecastWeatherDiv}
       </div>
-      <div className="forecast">{forecastWeatherDiv}</div>
-      <div className="hourly">{hoursDiv}</div>
+      <div className="hourly rectangle">{hoursDiv}</div>
       <div className="data">{mapDiv}</div>
     </div>
   );

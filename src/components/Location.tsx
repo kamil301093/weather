@@ -11,21 +11,15 @@ const Location = (props: { city: string, region: string, country: string, localt
                                 <div className="location__item rectangle rectangle--half">
                                         <FontAwesomeIcon icon={faEarthAfrica} size="2xl" />
                                         <div className="location__text" >
-                                                <div className="location__country">
-                                                        {props.country}
-                                                </div>
-                                                <div className="location__region">
-                                                        {props.region}
-                                                </div>
+                                                <div className="location__line">{props.country}</div>
+                                                <div className="location__line">{props.region}</div>
+                                                <div className="location__line">zone {props.timezone}</div>
                                         </div>
                                 </div>
                                 <div className="location__item rectangle rectangle--half">
                                         <FontAwesomeIcon icon={faClock} size="2xl" />
-                                        <div className="location__text" >
-                                                <div className="location__localtime">
-                                                        {props.localtime}
-                                                        {"(" + props.timezone + ")"}
-                                                </div>
+                                        <div className="location__localtime">
+                                                <div className="location__line">{props.localtime}</div> 
                                         </div>
                                 </div>
                         </div>

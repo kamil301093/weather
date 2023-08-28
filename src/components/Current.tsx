@@ -3,7 +3,7 @@ import { faCircleInfo } from '@fortawesome/free-solid-svg-icons/faCircleInfo';
 import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark';
 import { useState } from 'react';
 
-const Current = (props: { title: string; icon: string, header: string, lastupdate: string, timeOfDay: number, tempC: number, tempF: number, feelslikeC: number, feelslikeF: number, cloud: number, uv: number, windDir: number, windMph: number, windKph: number, humidity: number, pressureM: number, pressureI: number }) => {
+const Current = (props: { title: string; icon: string, header: string, city: string, region: string, country: string, localtime: string, timezone: string, lastupdate: string, timeOfDay: number, tempC: number, tempF: number, feelslikeC: number, feelslikeF: number, cloud: number, uv: number, windDir: number, windMph: number, windKph: number, humidity: number, pressureM: number, pressureI: number }) => {
 
         const [showUvWarning, setShowUvWarning] = useState<boolean>(false);
 
@@ -41,11 +41,18 @@ const Current = (props: { title: string; icon: string, header: string, lastupdat
 
         return (
                 <div className="current__wrapper">
+                        <h2 className="current__city">{props.city}</h2>
                         <div className="current__info rectangle">
-                                <img className="current__img" src={props.icon} alt="weather icon" />
-                                <div className="current__text">
-                                        <h3 className="current__header">{props.tempC + " C (" + props.tempF + " F)"}</h3>
+                                <div className="current__weather">
+                                        <img className="current__img" src={props.icon} alt="weather icon" />
                                         <h4 className="current__description">{props.header}</h4>
+                                </div>
+                                <h3 className="current__temp">{props.tempC + " C (" + props.tempF + " F)"}</h3>
+                                <div className="current__location">
+                                        <div>{props.localtime}</div>
+                                        <div className="current__region">{props.region}</div>
+                                        <div className="current__region">{props.country}</div>
+                                        <div className="current__region">timezone: {props.timezone}</div>
                                 </div>
                         </div>
                         <h3 className="current__subtitle">{props.title}</h3>
