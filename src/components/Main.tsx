@@ -242,7 +242,7 @@ const Main = () => {
         <a onClick={() => setForecastDay(forecastDay - 1)} style={{ visibility: showPrevButton == true ? 'visible' : 'hidden' }}><FontAwesomeIcon icon={faChevronLeft} /></a>
         <a onClick={() => setForecastDay(forecastDay + 1)} style={{ visibility: showNextButton == true ? 'visible' : 'hidden' }}><FontAwesomeIcon icon={faChevronRight} /></a>
       </div>
-      <div className="data">{forecastWeatherDiv}</div>
+      <div className="forecast">{forecastWeatherDiv}</div>
       <div className="hourly">{hoursDiv}</div>
       <div className="data">{mapDiv}</div>
     </div>

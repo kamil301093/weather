@@ -76,8 +76,8 @@ const Current = (props: { title: string; icon: string, header: string, lastupdat
                                                 {props.uv}
                                                 <FontAwesomeIcon className="current__uv-icon" icon={faCircleInfo} onClick={toggleWarning} />
                                                 <div className="current__uv-warning" style={{ visibility: showUvWarning == true ? 'visible' : 'hidden' }}>
-                                                        <a className="current_uv-warning-close" onClick={closeWarning}><FontAwesomeIcon icon={faXmark} size="sm" /></a>
-                                                        {uvWarning}
+                                                        <a className="current__uv-warning-close" onClick={closeWarning}><FontAwesomeIcon icon={faXmark} size="sm" /></a>
+                                                        <div className="current__uv-warning-text">{uvWarning}</div>
                                                 </div>
                                         </div>
                                 </div>
