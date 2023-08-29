@@ -39,6 +39,8 @@ const Current = (props: { title: string; icon: string, header: string, city: str
                 setShowUvWarning(false);
         }
 
+        const localtimeSplit = props.localtime.split(" ");
+
         return (
                 <div className="current__wrapper">
                         <h2 className="current__city">{props.city}</h2>
@@ -47,12 +49,13 @@ const Current = (props: { title: string; icon: string, header: string, city: str
                                         <img className="current__img" src={props.icon} alt="weather icon" />
                                         <h4 className="current__description">{props.header}</h4>
                                 </div>
-                                <h3 className="current__temp">{props.tempC + " C (" + props.tempF + " F)"}</h3>
+                                <h3 className="current__temp">{props.tempC + "°C" /* (" + props.tempF + " °F)"*/ }</h3>
                                 <div className="current__location">
-                                        <div>{props.localtime}</div>
+                                        <div className="current__date">{localtimeSplit[0]}</div>
+                                        <div className="current__time">{localtimeSplit[1]}</div>
+                                        <div className="current__region current__region--country">{props.country}</div>
                                         <div className="current__region">{props.region}</div>
-                                        <div className="current__region">{props.country}</div>
-                                        <div className="current__region">timezone: {props.timezone}</div>
+                                        <div className="current__region current__region--timezone">timezone: {props.timezone}</div>
                                 </div>
                         </div>
                         <h3 className="current__subtitle">{props.title}</h3>
@@ -69,7 +72,7 @@ const Current = (props: { title: string; icon: string, header: string, city: str
                                 <hr className="current__hr" />
                                 <div className="current__row">
                                         <div className="current__name">feelslike temp</div>
-                                        <div className="current__data">{props.feelslikeC + " C (" + props.feelslikeF + " F)"}</div>
+                                        <div className="current__data">{props.feelslikeC + " C (" + props.feelslikeF + " F)" }</div>
                                 </div>
                                 <hr className="current__hr" />
                                 <div className="current__row">
@@ -79,12 +82,12 @@ const Current = (props: { title: string; icon: string, header: string, city: str
                                 <hr className="current__hr" />
                                 <div className="current__row">
                                         <div className="current__name">UV (1-11 scale)</div>
-                                        <div className="current__data">
+                                        <div className="current__data current__data--uv">
                                                 {props.uv}
                                                 <FontAwesomeIcon className="current__uv-icon" icon={faCircleInfo} onClick={toggleWarning} />
                                                 <div className="current__uv-warning" style={{ visibility: showUvWarning == true ? 'visible' : 'hidden' }}>
-                                                        <a className="current__uv-warning-close" onClick={closeWarning}><FontAwesomeIcon icon={faXmark} size="sm" /></a>
                                                         <div className="current__uv-warning-text">{uvWarning}</div>
+                                                        <a className="current__uv-warning-close" onClick={closeWarning}><FontAwesomeIcon icon={faXmark} size="sm" /></a>
                                                 </div>
                                         </div>
                                 </div>

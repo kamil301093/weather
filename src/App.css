@@ -40,6 +40,20 @@ body {
   font-family: Montserrat Bold;
 }
 
+.current__data--uv {
+  display:flex;
+}
+
+.current__date {
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+.current__description {
+  font-size: 15px;
+  line-height: 20px;
+}
+
 .current__hr, .forecast__hr {
   background: #fff;
   border: 0;
@@ -49,10 +63,19 @@ body {
   width: 320px;
 }
 
+.current__img {
+  margin-top: 20px;
+}
+
 .current__info, .forecast__info {
   display: flex;
   justify-content: space-between;
   padding: 10px 40px;
+}
+
+.current__location {
+  text-align: right;
+  width: 100px;
 }
 
 .current__panel, .forecast__panel {
@@ -61,6 +84,15 @@ body {
 
 .current__region {
   font-size: 12px;
+  margin-top: 6px;
+}
+
+.current__region--country {
+  font-family: Montserrat Bold;
+}
+
+.current__region--timezone {
+  margin-bottom:20px;
 }
 
 .current__row, .forecast__row {
@@ -77,12 +109,19 @@ body {
 }
 
 .current__temp {
-  font-size:30px;
+  font-size: 30px;
+}
+
+.current__time {
+  font-family: Montserrat Bold;
+  font-size: 25px;
+  margin-top: 10px;
 }
 
 .current__uv-icon, .forecast__uv-icon {
+  color:#496AE3;
   cursor: pointer;
-  margin-left: 4px;
+  margin: 8px 0 0 4px;
 }
 
 .current__uv-warning, .forecast__uv-warning {
@@ -91,18 +130,23 @@ body {
   display: flex;
   font-size: 13px;
   line-height: 20px;
+  margin:-15px 0 0 30px;
   padding: 10px;
   position: absolute;
   width: 200px;
 }
 
 .current__uv-warning-close, .forecast_uv-warning-close {
-  text-align: right;
+  color:red;
   width: 10px;
 }
 
 .current__uv-warning-text, .forecast__uv-warning-text {
-  width:150px;
+  width: 135px;
+}
+
+.current__weather {
+  width: 90px;
 }
 
 .footer {
@@ -111,12 +155,12 @@ body {
 }
 
 .forecast__nav {
-  margin:0 10px -38px 0;
+  margin: 0 10px -38px 0;
   text-align: right;
 }
 
 .forecast__navarrow {
-  padding:0 5px;
+  padding: 0 5px;
 }
 
 .hourly__hour {
@@ -132,7 +176,7 @@ body {
 }
 
 .hourly__icon {
-  padding-right:20px;
+  padding-right: 20px;
   width: 40px;
 }
 
