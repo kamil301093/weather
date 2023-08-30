@@ -41,6 +41,8 @@ const Current = (props: { title: string; icon: string, header: string, city: str
 
         const localtimeSplit = props.localtime.split(" ");
 
+        const timeZoneSplit = props.timezone.split("/");
+
         return (
                 <div className="current__wrapper">
                         <h2 className="current__city">{props.city}</h2>
@@ -55,7 +57,9 @@ const Current = (props: { title: string; icon: string, header: string, city: str
                                         <div className="current__time">{localtimeSplit[1]}</div>
                                         <div className="current__region current__region--country">{props.country}</div>
                                         <div className="current__region">{props.region}</div>
-                                        <div className="current__region current__region--timezone">timezone: {props.timezone}</div>
+                                        <div className="current__region">timezone:</div>
+                                        <div className="current__region">{timeZoneSplit[0]}</div>
+                                        <div className="current__region current__region--timezone">{timeZoneSplit[1]}</div>
                                 </div>
                         </div>
                         <h3 className="current__subtitle">{props.title}</h3>
@@ -72,7 +76,7 @@ const Current = (props: { title: string; icon: string, header: string, city: str
                                 <hr className="current__hr" />
                                 <div className="current__row">
                                         <div className="current__name">feelslike temp</div>
-                                        <div className="current__data">{props.feelslikeC + " C (" + props.feelslikeF + " F)" }</div>
+                                        <div className="current__data">{props.feelslikeC + "°C (" + props.feelslikeF + " F)" }</div>
                                 </div>
                                 <hr className="current__hr" />
                                 <div className="current__row">

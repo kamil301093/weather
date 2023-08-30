@@ -41,7 +41,7 @@ body {
 }
 
 .current__data--uv {
-  display:flex;
+  display: flex;
 }
 
 .current__date {
@@ -52,6 +52,7 @@ body {
 .current__description {
   font-size: 15px;
   line-height: 20px;
+  margin-left: 10px;
 }
 
 .current__hr, .forecast__hr {
@@ -92,7 +93,7 @@ body {
 }
 
 .current__region--timezone {
-  margin-bottom:20px;
+  margin-bottom: 20px;
 }
 
 .current__row, .forecast__row {
@@ -109,7 +110,8 @@ body {
 }
 
 .current__temp {
-  font-size: 30px;
+  font-size: 35px;
+  margin-top: 45px;
 }
 
 .current__time {
@@ -118,8 +120,13 @@ body {
   margin-top: 10px;
 }
 
+.current__update-icon {
+  color: green;
+  margin-left:5px;
+}
+
 .current__uv-icon, .forecast__uv-icon {
-  color:#496AE3;
+  color: #496AE3;
   cursor: pointer;
   margin: 8px 0 0 4px;
 }
@@ -130,14 +137,14 @@ body {
   display: flex;
   font-size: 13px;
   line-height: 20px;
-  margin:-15px 0 0 30px;
+  margin: -15px 0 0 30px;
   padding: 10px;
   position: absolute;
   width: 200px;
 }
 
 .current__uv-warning-close, .forecast_uv-warning-close {
-  color:red;
+  color: red;
   width: 10px;
 }
 

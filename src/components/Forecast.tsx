@@ -59,15 +59,15 @@ const Info = (props: { title: string; date: any, icon: string, header: string, m
                                         {props.header}
                                 </div>
                                 <div>
-                                        <h3 className="forecast__header">{props.maxTempC + " C (" + props.maxTempF + " F)"}</h3>
-                                        <div className="forecast__min">min {props.minTempC + " C (" + props.minTempF + " F)"}</div>
+                                        <h3 className="forecast__header">{props.maxTempC + "°C (" + props.maxTempF + "°F)"}</h3>
+                                        <div className="forecast__min">min {props.minTempC + "°C (" + props.minTempF + "°F)"}</div>
                                 </div>
                         </div>
 
                         <div className="forecast__panel rectangle">
                                 <div className="forecast__row">
                                         <div className="forecast__name">avg temp</div>
-                                        <div className="forecast__data">{props.avgTempC + " C (" + props.avgTempF + " F)"}</div>
+                                        <div className="forecast__data">{props.avgTempC + "°C (" + props.avgTempF + "°F)"}</div>
                                 </div>
                                 <hr className="forecast__hr" />
                                 <div className="forecast__row">

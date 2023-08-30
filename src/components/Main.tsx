@@ -39,6 +39,7 @@ const Main = () => {
     const ltPlusLn = '' + lt + ',' + ln + '';
     setCoordinates(ltPlusLn);
     removeKeyword();
+    setForecastDay(0);
   }
 
   const removeKeyword = () => {
