@@ -15,7 +15,7 @@ const Hourly = (props: { time: string, icon: string, tempC: number, tempF: numbe
                 </div>
                 <img className="hourly__icon" src={props.icon} alt={props.text} />
                 <div className="hourly__temp">
-                    {props.tempC + " C (" + props.tempF + " F)"}
+                    {props.tempC + "°C"}
                 </div>
                 <div className="hourly__text">
                     {props.text}

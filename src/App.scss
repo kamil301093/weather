@@ -131,6 +131,10 @@ body {
   margin: 8px 0 0 4px;
 }
 
+.current__uv-icon:hover, .forecast__uv-icon:hover {
+  color:#d4d4d4;
+}
+
 .current__uv-warning, .forecast__uv-warning {
   background: #fff;
   border-radius: 8px;
@@ -216,11 +220,12 @@ body {
 
 .loading {
   background: #fff;
+  text-align:center;
+  width:320px;
 }
 
 .loading__icon {
   margin: 15px auto;
-  position: absolute;
 }
 
 .main {
@@ -230,9 +235,12 @@ body {
 
 .noresults {
   background: #fff;
+  border-radius:8px;
   font-size: 14px;
   margin: 15px auto;
   position: absolute;
+  text-align: center;
+  width:320px;
 }
 
 .noresults__message {
@@ -249,15 +257,16 @@ body {
 }
 
 .results {
+  background: #d4d4d4;
+  border-radius:8px;
   position: absolute;
 }
 
 .results__item {
-  background: #f0f0f0;
   display: block;
   font-size: 14px;
-  height: 30;
-  line-height: 30px;
+  height: 36px;
+  line-height: 36px;
   text-align: left;
   text-indent: 20px;
   width: 320px;
@@ -280,7 +289,7 @@ body {
   justify-content: space-between;
   margin: 30px auto auto auto;
   text-align: left;
-  width: 400px;
+  width: 100%;
 }
 
 .searchpanel__delete {
@@ -302,4 +311,9 @@ body {
   line-height: 35px;
   text-indent: 20px;
   width: 320px;
+}
+
+.searchpanel__input:focus {
+  background:#d4d4d4;
+  outline: none;
 }
