@@ -8,6 +8,9 @@
   src: url(fonts/Montserrat/Montserrat-Bold.ttf);
 }
 
+$blue: #496AE3;
+$lightgrey: #f0f0f0;
+
 a {
   cursor: pointer;
 }
@@ -25,6 +28,10 @@ body {
 .content {
   margin: 0 auto;
   width: 400px;
+}
+
+.current {
+  width:100%;
 }
 
 .current__city {
@@ -126,7 +133,7 @@ body {
 }
 
 .current__uv-icon, .forecast__uv-icon {
-  color: #496AE3;
+  color: $blue;
   cursor: pointer;
   margin: 8px 0 0 4px;
 }
@@ -163,6 +170,8 @@ body {
 .footer {
   display: flex;
   justify-content: space-between;
+  padding-top:20px;
+  width:100%;
 }
 
 .forecast__nav {
@@ -233,11 +242,15 @@ body {
   width: 100%;
 }
 
+.map {
+  margin:20px auto 20px auto;
+}
+
 .noresults {
   background: #fff;
   border-radius:8px;
   font-size: 14px;
-  margin: 15px auto;
+  padding-top:8px;
   position: absolute;
   text-align: center;
   width:320px;
@@ -248,7 +261,7 @@ body {
 }
 
 .rectangle {
-  background: #f0f0f0;
+  background: $lightgrey;
   border-radius: 8px;
 }
 
@@ -259,6 +272,7 @@ body {
 .results {
   background: #d4d4d4;
   border-radius:8px;
+  margin-top:37px;
   position: absolute;
 }
 
@@ -285,8 +299,8 @@ body {
 }
 
 .searchpanel {
-  display: flex;
-  justify-content: space-between;
+  display: block;
+  height:40px;
   margin: 30px auto auto auto;
   text-align: left;
   width: 100%;
@@ -295,7 +309,7 @@ body {
 .searchpanel__delete {
   cursor: pointer;
   display: none;
-  margin-left: -20px;
+  margin: 10px 0 0 -26px;
 }
 
 .searchpanel__geolocation {
@@ -305,6 +319,7 @@ body {
 
 .searchpanel__input {
   border: 0;
+  float: left;
   font-family: Montserrat Regular;
   font-size: 16px;
   height: 35px;
@@ -316,4 +331,12 @@ body {
 .searchpanel__input:focus {
   background:#d4d4d4;
   outline: none;
+}
+
+.searchpanel__left {
+  float: left;
+}
+
+.searchpanel__right {
+  float: right;
 }
