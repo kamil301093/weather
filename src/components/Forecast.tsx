@@ -92,12 +92,12 @@ const Info = (props: { title: string; date: any, icon: string, header: string, m
                                 <hr className="forecast__hr" />
                                 <div className="forecast__row">
                                         <div className="forecast__name">UV (1-11 scale)</div>
-                                        <div className="forecast__data">
+                                        <div className="forecast__data forecast__data--uv">
                                                 {props.uv}
                                                 <FontAwesomeIcon className="forecast__uv-icon" icon={faCircleInfo} onClick={toggleWarning} />
                                                 <div className="forecast__uv-warning" style={{ visibility: showUvWarning == true ? 'visible' : 'hidden' }}>
-                                                        <a className="forecast__uv-warning-close" onClick={closeWarning}><FontAwesomeIcon icon={faXmark} size="sm" /></a>
                                                         <div className="forecast__uv-warning-text">{uvWarning}</div>
+                                                        <a className="forecast__uv-warning-close" onClick={closeWarning}><FontAwesomeIcon icon={faXmark} size="sm" /></a>
                                                 </div>
                                         </div>
                                 </div>

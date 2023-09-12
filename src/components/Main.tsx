@@ -5,6 +5,7 @@ import Forecast from './Forecast';
 import Hourly from './Hourly';
 import Loading from './Loading';
 import NoResults from './NoResults';
+import Nothing from './Nothing';
 import Geolocation from './Geolocation';
 import Map from './Map';
 
@@ -93,7 +94,7 @@ const Main = () => {
   useEffect(() => {
     console.log(weatherData)
     if (weatherData === "" || weatherData === "undefined" || weatherData.length === 0) {
-      setCurrentWeatherDiv("");
+      setCurrentWeatherDiv(<Nothing nothingFunction={locMe} />);
     } else {
       setShowNextButton(true);
       setCurrentWeatherDiv(

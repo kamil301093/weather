@@ -10,6 +10,7 @@
 
 $blue: #496AE3;
 $lightgrey: #f0f0f0;
+$darkgrey: #d4d4d4;
 
 a {
   cursor: pointer;
@@ -31,23 +32,27 @@ body {
 }
 
 .current {
-  width:100%;
+  width: 100%;
 }
 
 .current__city {
   text-align: left;
 }
 
-.current__data, .current__name, .forecast__data, .forecast__name {
+.current__data,
+.current__name,
+.forecast__data,
+.forecast__name {
   text-align: left;
   width: 160px;
 }
 
-.current__data, .forecast__data {
+.current__data,
+.forecast__data {
   font-family: Montserrat Bold;
 }
 
-.current__data--uv {
+.current__data--uv, .forecast__data--uv {
   display: flex;
 }
 
@@ -62,7 +67,8 @@ body {
   margin-left: 10px;
 }
 
-.current__hr, .forecast__hr {
+.current__hr,
+.forecast__hr {
   background: #fff;
   border: 0;
   display: block;
@@ -75,7 +81,8 @@ body {
   margin-top: 20px;
 }
 
-.current__info, .forecast__info {
+.current__info,
+.forecast__info {
   display: flex;
   justify-content: space-between;
   padding: 10px 40px;
@@ -86,7 +93,8 @@ body {
   width: 100px;
 }
 
-.current__panel, .forecast__panel {
+.current__panel,
+.forecast__panel {
   padding: 15px 0;
 }
 
@@ -103,7 +111,8 @@ body {
   margin-bottom: 20px;
 }
 
-.current__row, .forecast__row {
+.current__row,
+.forecast__row {
   display: flex;
   font-size: 14px;
   height: 35px;
@@ -112,7 +121,8 @@ body {
   width: 320px;
 }
 
-.current__subtitle, .forecast__subtitle {
+.current__subtitle,
+.forecast__subtitle {
   text-align: left;
 }
 
@@ -129,20 +139,23 @@ body {
 
 .current__update-icon {
   color: green;
-  margin-left:5px;
+  margin-left: 5px;
 }
 
-.current__uv-icon, .forecast__uv-icon {
+.current__uv-icon,
+.forecast__uv-icon {
   color: $blue;
   cursor: pointer;
   margin: 8px 0 0 4px;
 }
 
-.current__uv-icon:hover, .forecast__uv-icon:hover {
-  color:#d4d4d4;
+.current__uv-icon:hover,
+.forecast__uv-icon:hover {
+  color: $darkgrey;
 }
 
-.current__uv-warning, .forecast__uv-warning {
+.current__uv-warning,
+.forecast__uv-warning {
   background: #fff;
   border-radius: 8px;
   display: flex;
@@ -154,12 +167,14 @@ body {
   width: 200px;
 }
 
-.current__uv-warning-close, .forecast_uv-warning-close {
+.current__uv-warning-close,
+.forecast__uv-warning-close {
   color: red;
   width: 10px;
 }
 
-.current__uv-warning-text, .forecast__uv-warning-text {
+.current__uv-warning-text,
+.forecast__uv-warning-text {
   width: 135px;
 }
 
@@ -170,8 +185,8 @@ body {
 .footer {
   display: flex;
   justify-content: space-between;
-  padding-top:20px;
-  width:100%;
+  padding-top: 20px;
+  width: 100%;
 }
 
 .forecast__nav {
@@ -229,8 +244,8 @@ body {
 
 .loading {
   background: #fff;
-  text-align:center;
-  width:320px;
+  text-align: center;
+  width: 320px;
 }
 
 .loading__icon {
@@ -243,17 +258,17 @@ body {
 }
 
 .map {
-  margin:20px auto 20px auto;
+  margin: 20px auto 20px auto;
 }
 
 .noresults {
   background: #fff;
-  border-radius:8px;
+  border-radius: 8px;
   font-size: 14px;
-  padding-top:8px;
+  padding-top: 8px;
   position: absolute;
   text-align: center;
-  width:320px;
+  width: 320px;
 }
 
 .noresults__message {
@@ -270,9 +285,9 @@ body {
 }
 
 .results {
-  background: #d4d4d4;
-  border-radius:8px;
-  margin-top:37px;
+  background: $darkgrey;
+  border-radius: 8px;
+  margin-top: 3px;
   position: absolute;
 }
 
@@ -300,7 +315,7 @@ body {
 
 .searchpanel {
   display: block;
-  height:40px;
+  height: 40px;
   margin: 30px auto auto auto;
   text-align: left;
   width: 100%;
@@ -310,11 +325,17 @@ body {
   cursor: pointer;
   display: none;
   margin: 10px 0 0 -26px;
+  &:hover {
+    color:#fff;
+  }
 }
 
 .searchpanel__geolocation {
   line-height: 35px;
   margin-right: 15px;
+  &:hover {
+    color:$darkgrey;
+  }
 }
 
 .searchpanel__input {
@@ -329,7 +350,7 @@ body {
 }
 
 .searchpanel__input:focus {
-  background:#d4d4d4;
+  background: $darkgrey;
   outline: none;
 }
 
