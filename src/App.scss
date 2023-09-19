@@ -189,6 +189,10 @@ body {
   width: 100%;
 }
 
+.forecast {
+  margin-top:20px;
+}
+
 .forecast__nav {
   margin: 0 10px -38px 0;
   text-align: right;
@@ -196,6 +200,10 @@ body {
 
 .forecast__navarrow {
   padding: 0 5px;
+}
+
+.hourly {
+  margin-top:20px; 
 }
 
 .hourly__hour {
@@ -273,6 +281,14 @@ body {
 
 .noresults__message {
   margin: 10px auto;
+}
+
+.nothing {
+  padding:20px;
+}
+
+.nothing__link {
+  font-weight: bold;
 }
 
 .rectangle {

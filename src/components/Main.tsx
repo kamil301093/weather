@@ -240,7 +240,12 @@ const Main = () => {
         </div>
         {forecastWeatherDiv}
       </div>
-      <div className="hourly rectangle">{hoursDiv}</div>
+      <div className="hourly">
+        <h3 className="hourly__subtitle">Hourly</h3>
+        <div className="hourly__hours rectangle">
+          {hoursDiv}
+        </div>
+      </div>
       <div className="map">{mapDiv}</div>
     </div>
   );
