@@ -1,7 +1,8 @@
 {
   "name": "weather",
   "version": "0.1.0",
-  "homepage":http: //kamil301093.github.io/weather, "private": true,
+  "homepage": "http: //kamil301093.github.io/weather", 
+  "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-regular-svg-icons": "^6.4.0",
