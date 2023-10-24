@@ -69,27 +69,22 @@ const Info = (props: { title: string; date: any, icon: string, header: string, m
                                         <div className="forecast__name">avg temp</div>
                                         <div className="forecast__data">{props.avgTempC + "°C (" + props.avgTempF + "°F)"}</div>
                                 </div>
-                                <hr className="forecast__hr" />
                                 <div className="forecast__row">
                                         <div className="forecast__name">max wind</div>
                                         <div className="forecast__data">{props.maxWindKph + " kph (" + props.maxWindMph + " mph)"}</div>
                                 </div>
-                                <hr className="forecast__hr" />
                                 <div className="forecast__row">
                                         <div className="forecast__name">will it rain?</div>
                                         <div className="forecast__data">{rainChance + " (" + props.rainChancePercent + "% chance)"}</div>
                                 </div>
-                                <hr className="forecast__hr" />
                                 <div className="forecast__row">
                                         <div className="forecast__name">will it snow?</div>
                                         <div className="forecast__data">{snowChance + " (" + props.snowChancePercent + "% chance)"}</div>
                                 </div>
-                                <hr className="forecast__hr" />
                                 <div className="forecast__row">
                                         <div className="forecast__name">avg humidity</div>
                                         <div className="forecast__data">{props.avgHumidity + "%"}</div>
                                 </div>
-                                <hr className="forecast__hr" />
                                 <div className="forecast__row">
                                         <div className="forecast__name">UV (1-11 scale)</div>
                                         <div className="forecast__data forecast__data--uv">
@@ -101,12 +96,10 @@ const Info = (props: { title: string; date: any, icon: string, header: string, m
                                                 </div>
                                         </div>
                                 </div>
-                                <hr className="forecast__hr" />
                                 <div className="forecast__row">
                                         <div className="forecast__name">sunrise</div>
                                         <div className="forecast__data">{props.sunrise}</div>
                                 </div>
-                                <hr className="forecast__hr" />
                                 <div className="forecast__row">
                                         <div className="forecast__name">sunset</div>
                                         <div className="forecast__data">{props.sunset}</div>

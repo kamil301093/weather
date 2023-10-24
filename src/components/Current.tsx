@@ -68,22 +68,18 @@ const Current = (props: { title: string; icon: string, header: string, city: str
                                         <div className="current__name">last update</div>
                                         <div className="current__data">{props.lastupdate}</div>
                                 </div>
-                                <hr className="current__hr" />
                                 <div className="current__row">
                                         <div className="current__name">day or night?</div>
                                         <div className="current__data">{dayOrNight > 0 ? 'day' : 'night'}</div>
                                 </div>
-                                <hr className="current__hr" />
                                 <div className="current__row">
                                         <div className="current__name">feelslike temp</div>
                                         <div className="current__data">{props.feelslikeC + "°C (" + props.feelslikeF + " F)" }</div>
                                 </div>
-                                <hr className="current__hr" />
                                 <div className="current__row">
                                         <div className="current__name">cloud</div>
                                         <div className="current__data">{props.cloud + "%"}</div>
                                 </div>
-                                <hr className="current__hr" />
                                 <div className="current__row">
                                         <div className="current__name">UV (1-11 scale)</div>
                                         <div className="current__data current__data--uv">
@@ -95,22 +91,18 @@ const Current = (props: { title: string; icon: string, header: string, city: str
                                                 </div>
                                         </div>
                                 </div>
-                                <hr className="current__hr" />
                                 <div className="current__row">
                                         <div className="current__name">wind direction</div>
                                         <div className="current__data">{props.windDir}</div>
                                 </div>
-                                <hr className="current__hr" />
                                 <div className="current__row">
                                         <div className="current__name">wind</div>
                                         <div className="current__data">{props.windKph + " kph (" + props.windMph + " mph)"}</div>
                                 </div>
-                                <hr className="current__hr" />
                                 <div className="current__row">
                                         <div className="current__name">humidity</div>
                                         <div className="current__data">{props.humidity + "%"}</div>
                                 </div>
-                                <hr className="current__hr" />
                                 <div className="current__row">
                                         <div className="current__name">pressure</div>
                                         <div className="current__data">{props.pressureM + " mb (" + props.pressureI + " in)"}</div>

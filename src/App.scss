@@ -49,10 +49,11 @@ body {
 
 .current__data,
 .forecast__data {
-  font-family: Montserrat Bold;
+  font-family: 'Montserrat Bold';
 }
 
-.current__data--uv, .forecast__data--uv {
+.current__data--uv,
+.forecast__data--uv {
   display: flex;
 }
 
@@ -65,16 +66,6 @@ body {
   font-size: 15px;
   line-height: 20px;
   margin-left: 10px;
-}
-
-.current__hr,
-.forecast__hr {
-  background: #fff;
-  border: 0;
-  display: block;
-  height: 2px;
-  margin: 0 auto;
-  width: 320px;
 }
 
 .current__img {
@@ -185,12 +176,18 @@ body {
 .footer {
   display: flex;
   justify-content: space-between;
+  margin-bottom:40px;
   padding-top: 20px;
   width: 100%;
 }
 
+.footer__link {
+  color:#000;
+  text-decoration: none;
+}
+
 .forecast {
-  margin-top:20px;
+  margin-top: 20px;
 }
 
 .forecast__nav {
@@ -203,19 +200,13 @@ body {
 }
 
 .hourly {
-  margin-top:20px; 
+  margin-top: 20px;
 }
 
 .hourly__hour {
+  padding-top: 10px;
   text-align: left;
   width: 60px;
-}
-
-.hourly__hr {
-  background: #fff;
-  border: 0;
-  height: 2px;
-  width: 100%;
 }
 
 .hourly__icon {
@@ -228,11 +219,13 @@ body {
 }
 
 .hourly__temp {
+  padding-top: 10px;
   text-align: left;
   width: 90px;
 }
 
 .hourly__text {
+  padding-top: 10px;
   text-align: left;
   width: 100px;
 }
@@ -284,7 +277,8 @@ body {
 }
 
 .nothing {
-  padding:20px;
+  line-height:22px;
+  padding: 20px;
 }
 
 .nothing__link {
@@ -321,14 +315,6 @@ body {
   background: #fff;
 }
 
-.results__hr {
-  background: #fff;
-  border: 0;
-  height: 2px;
-  margin: 0 auto;
-  width: 290px;
-}
-
 .searchpanel {
   display: block;
   height: 40px;
@@ -341,16 +327,18 @@ body {
   cursor: pointer;
   display: none;
   margin: 10px 0 0 -26px;
+
   &:hover {
-    color:#fff;
+    color: #fff;
   }
 }
 
 .searchpanel__geolocation {
   line-height: 35px;
   margin-right: 15px;
+
   &:hover {
-    color:$darkgrey;
+    color: $darkgrey;
   }
 }
 

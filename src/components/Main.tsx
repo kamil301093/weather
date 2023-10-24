@@ -78,6 +78,7 @@ const Main = () => {
   }, [cities]);
 
   useEffect(() => {
+    setMapDiv("");
     if (coordinates !== "") {
       let url = 'http://api.weatherapi.com/v1/forecast.json?key=cfb427d15f6e4de9951181216232004&q=' + coordinates + '&days=3';
       fetch(url)
@@ -156,6 +157,13 @@ const Main = () => {
     }
   }, [weatherData]);
 
+  const locMe = () => {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      const ltPlusLn = '' + position.coords.latitude + ',' + position.coords.longitude + '';
+      setCoordinates(ltPlusLn);
+    });
+  }
+
   useEffect(() => {
     if (mapCoords != undefined) {
       setMapDiv(<Map mapCoords={coordinates} />);
@@ -163,13 +171,6 @@ const Main = () => {
       setMapDiv("");
     }
   }, [mapCoords]);
-
-  const locMe = () => {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      const ltPlusLn = '' + position.coords.latitude + ',' + position.coords.longitude + '';
-      setCoordinates(ltPlusLn);
-    });
-  }
 
   useEffect(() => {
     if (weatherData.forecast === "" || weatherData.forecast === undefined || weatherData.forecast.length === 0) {
@@ -241,7 +242,6 @@ const Main = () => {
         {forecastWeatherDiv}
       </div>
       <div className="hourly">
-        <h3 className="hourly__subtitle">Hourly</h3>
         <div className="hourly__hours rectangle">
           {hoursDiv}
         </div>

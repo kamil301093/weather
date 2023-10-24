@@ -21,7 +21,6 @@ const Hourly = (props: { time: string, icon: string, tempC: number, tempF: numbe
                     {props.text}
                 </div>
             </div>
-            <hr className="hourly__hr" />
         </div>
     )
 }
