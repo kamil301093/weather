@@ -51,7 +51,7 @@ const Main = () => {
     if (keyword.length > 0) {
       setCitiesResults(<Loading />);
       setShowDeleteKeywordButton(true);
-      let url = 'http://api.weatherapi.com/v1/search.json?key=cfb427d15f6e4de9951181216232004&q=' + keyword;
+      let url = 'https://api.weatherapi.com/v1/search.json?key=cfb427d15f6e4de9951181216232004&q=' + keyword;
       fetch(url)
         .then(response => {
           return response.json()
@@ -80,7 +80,7 @@ const Main = () => {
   useEffect(() => {
     setMapDiv("");
     if (coordinates !== "") {
-      let url = 'http://api.weatherapi.com/v1/forecast.json?key=cfb427d15f6e4de9951181216232004&q=' + coordinates + '&days=3';
+      let url = 'https://api.weatherapi.com/v1/forecast.json?key=cfb427d15f6e4de9951181216232004&q=' + coordinates + '&days=3';
       fetch(url)
         .then(response => {
           return response.json()
